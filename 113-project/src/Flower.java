@@ -1,10 +1,10 @@
 
-public class Flower extends items{
+public class Flower extends Items{
 private String type;
 private int flowerStock=250;
 
 
-public Flower (String name, int price, String type){   // مدري ذا مفروض يجيه قيم ولا نعين شي ثابت 
+public Flower (String name, int price, String type){   
 super(name,price);
 this.type=type;
 }

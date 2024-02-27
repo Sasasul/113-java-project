@@ -1,5 +1,5 @@
 
-public class ChocolateBox extends items {
+public class ChocolateBox extends Items {
 private int chocolateStock = 50;
 
 
