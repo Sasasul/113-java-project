@@ -4,7 +4,7 @@ protected String name;
 protected double price;
 
 
-public items(String name, int price){  //ليش زعلان
+public Items(String name, int price){  
 this.name=name;
 this.price=price;
 }
