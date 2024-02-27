@@ -3,7 +3,8 @@ public abstract  class Items {
 protected String name;
 protected double price;
 
-public items(String name, int price){
+
+public items(String name, int price){  //ليش زعلان
 this.name=name;
 this.price=price;
 }
