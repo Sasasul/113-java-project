@@ -1,5 +1,6 @@
 
 public class ChocolateBox extends Items {
+    
 private int chocolateStock = 50;
 private char size;
 
@@ -23,12 +24,15 @@ switch(this.size){
 
     default:
     return 0;
+}  
 }
-    
-}
+
+public void setPrice(double price){
+    this.price=price;                    //@@
+    }
+
 
 public String toString(){
     return super.toString() + "size is: " + size + "\n";
 }
-
 }

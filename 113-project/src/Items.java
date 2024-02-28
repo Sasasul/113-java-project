@@ -1,5 +1,6 @@
 
 public abstract  class Items {
+    
 protected String name;
 protected double price;
 
