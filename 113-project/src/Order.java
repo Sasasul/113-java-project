@@ -1,5 +1,6 @@
 
 public class Order {
+	//private numOfOrder;
 	private int numOfItems;
 	private Items[] itemList;
 	
@@ -11,10 +12,12 @@ public class Order {
 	
 	public boolean addItem(Items i) {
 		if(numOfItems<itemList.length) {
-			itemList[numOfItems++]=new Items(i);//لماذا!
-		return true;
-		}
-	return false;
+			if(i instanceof ChocolateBox)
+				itemList[numOfItems++]=new ChocolateBox((ChocolateBox)i);//لماذا!
+			else
+				itemList[numOfItems++]=new Flower((Flower)(i.getName(),i.getPrice(),i.getType()));
+		}//end if
+	
 	}
 	
 	public boolean removeItem(String name) {
@@ -31,9 +34,22 @@ public class Order {
 	public boolean serchItem(String s) {
 		boolean IsThereChoclateBox=false;
 		for(int i=0;i<numOfItems;i++) {
-			if(itemList[i] instanceof  )
+			if(itemList[i] instanceof ChocolateBox ) {}
+			IsThereChoclateBox=true;
 		}
+		return IsThereChoclateBox;
 	}
 
+	public double calculateTotalprice() {
+		double TotalPrice=0;
+		for(int i=0;i<numOfItems;i++) {
+			TotalPrice+=itemList[i].caculatePrice();
+		}
+		return TotalPrice;
+	}
+	
+	public String toString() {
+		String info="";
+	} 
 
 }
