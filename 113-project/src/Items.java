@@ -10,6 +10,11 @@ this.name=name;
 this.price=price;
 }
 
+public Items(Items i){
+	this.name=i.name;
+	this.price=i.price;
+}
+//methods
 public abstract double caculatePrice();
 
 // setters and getters

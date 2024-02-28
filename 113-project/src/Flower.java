@@ -10,6 +10,11 @@ super(name,price);
 this.type=type;
 }
 
+public Flower(Flower i) {
+	super(i);
+	type=i.type;
+}
+
 public double caculatePrice(){
 
 switch(this.type){

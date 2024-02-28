@@ -10,6 +10,12 @@ this.size=size;
 }
 
 
+public ChocolateBox(ChocolateBox i) {
+	super(i);
+	size=i.size;
+}
+
+
 
 public double caculatePrice(){
 
