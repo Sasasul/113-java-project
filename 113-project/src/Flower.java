@@ -1,17 +1,29 @@
 
 public class Flower extends Items{
-private String type;
-private int flowerStock=250;
+private int type;                   // each number represents a flower type #1 Rose, 2# Lily, 3#Blossom         وش فرق النوع عن الاسم؟ عموما بعتبر           
+private int flowerStock=250;       // يحتاج اسوي عداد في كلاساتي؟
 
 
-public Flower (String name, int price, String type){   
+public Flower (String name, int price, int type){   
 super(name,price);
 this.type=type;
 }
 
 public double caculatePrice(){
 
-    ///////////////////////
+switch(this.type){
+    case 1:
+    return 100;                   //  هنا مايحتاج بريك عشان الريتيرن صح
+                                  // الحين ذا سعر وردة ولاباقة
+    case 2:
+    return 200;
+
+    case 3:
+    return 300;
+
+    default:
+    return 0;                    // هذي لازم بعد
+}   
 }
 
 public String toString(){
