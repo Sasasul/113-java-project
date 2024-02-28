@@ -36,4 +36,21 @@ public String toString(){
     return super.toString() + " " + "Type is: " + type +"\n";
 }
 
+public int getType() {
+	return type;
+}
+
+public void setType(int type) {
+	this.type = type;
+}
+
+public int getFlowerStock() {
+	return flowerStock;
+}
+
+public void setFlowerStock(int flowerStock) {
+	this.flowerStock = flowerStock;
+}
+
+
 }

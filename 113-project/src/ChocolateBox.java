@@ -9,6 +9,8 @@ super(name,price);
 this.size=size;
 }
 
+
+
 public double caculatePrice(){
 
 switch(this.size){
@@ -35,4 +37,21 @@ public void setPrice(double price){
 public String toString(){
     return super.toString() + "size is: " + size + "\n";
 }
+
+public int getChocolateStock() {
+	return chocolateStock;
+}
+
+public void setChocolateStock(int chocolateStock) {
+	this.chocolateStock = chocolateStock;
+}
+
+public char getSize() {
+	return size;
+}
+
+public void setSize(char size) {
+	this.size = size;
+}
+
 }
