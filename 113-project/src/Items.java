@@ -12,7 +12,7 @@ this.price=price;
 public abstract double caculatePrice();
 
 public String toString(){
-    return "nameis : " + name + "price is: " + price;
+    return "name is : " + name + "price is: " + price;
 }
 
 }

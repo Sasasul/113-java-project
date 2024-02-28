@@ -28,7 +28,7 @@ switch(this.size){
 }
 
 public String toString(){
-    return super.toString() + "\n";
+    return super.toString() + "size is: " + size + "\n";
 }
 
 }
