@@ -1,6 +1,6 @@
 
 public class ChocolateBox extends Items {
-    
+
 private int chocolateStock = 50;
 private char size;
 
@@ -28,7 +28,7 @@ switch(this.size){
 }
 
 public void setPrice(double price){
-    this.price=price;                    //@@
+    this.price=price;                    //#@
     }
 
 
