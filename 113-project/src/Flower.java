@@ -53,8 +53,8 @@ public int getFlowerStock() {
 	return flowerStock;
 }
 
-public void setFlowerStock(int flowerStock) {
-	this.flowerStock = flowerStock;
+public void setFlowerStock() {
+	this.flowerStock-=1;
 }
 
 

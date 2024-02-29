@@ -48,8 +48,8 @@ public int getChocolateStock() {
 	return chocolateStock;
 }
 
-public void setChocolateStock(int chocolateStock) {
-	this.chocolateStock = chocolateStock;
+public void setChocolateStock() {
+	this.chocolateStock-=1;
 }
 
 public char getSize() {

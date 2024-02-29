@@ -15,10 +15,12 @@ public class Order {
 	// Methods
 	public boolean addItem(Items i) {
 		if (numOfItems < itemList.length) {
-			if (i instanceof ChocolateBox)
+			if (i instanceof ChocolateBox) {
 				itemList[numOfItems++] = new ChocolateBox((ChocolateBox) i);
-			else
+				((ChocolateBox)i).setChocolateStock();}
+			else {
 				itemList[numOfItems++] = new Flower((Flower) (i));
+				((Flower)i).setFlowerStock();}
 			return true;
 		} // end if
 		else
