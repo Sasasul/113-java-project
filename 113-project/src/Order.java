@@ -38,7 +38,7 @@ public class Order {
 		return ItemRemoved;
 	}
 
-	public boolean serchItem(String s) {
+	public boolean serchChocolateBox(String s) {
 		boolean IsThereChoclateBox = false;
 		for (int i = 0; i < numOfItems; i++) {
 			if (itemList[i] instanceof ChocolateBox) {
