@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class FlowerStore {
 public static void main(String[]args) {
 	
@@ -13,6 +14,7 @@ Customer c1= new Customer(name,ID);
 Order ord= new Order(c1);
 Items it1= new ChocolateBox("chocolate", 60,'M');
 Items it2= new Flower("Blossom", 5,1 );
+int op;
 do {
 	System.out.println("Enter your menu option:");	
 	System.out.println("1- Add Item");		
@@ -22,9 +24,9 @@ do {
 	System.out.println("5- Disply all order information: ");
 	System.out.println("6- Exite ");
 	System.out.println("your choice is :  ");
-	int op= input.nextInt();
+	 op= input.nextInt();
 	
-switch(op)
+switch(op) {
 case 1:
 	System.out.println("Enter item: "); // مو متأكدة منه 
 	
@@ -47,15 +49,14 @@ case 4:
 	ord.calculateTotalprice();
 	break;	
 case 5:
-	ord.toString()
+	ord.toString();
 	break;	
 
-	
+}
 	
 			
 	
-}
-while(op!=6);
+}while(op!=6);
 
 
 
@@ -65,5 +66,4 @@ while(op!=6);
 
 
 }
-}
-}
+}}
