@@ -29,6 +29,7 @@ do {
 switch(op)
 {
 case 1:
+	// Add item
     System.out.println("Do you want to add Flowers 'F' or ChocolateBox 'C': ");
     char typeOrder = input.next().charAt(0);
     input.nextLine();  // Consume the newline character
@@ -37,13 +38,14 @@ case 1:
         String nF = input.next();
         int pF = input.nextInt();
         int tF = input.nextInt();
-        Items it1 = new Flower(nF, pF, tF);
+        Items it1 = new Flower(nF, pF, tF); // now obj from user
         
         if (ord.addItem(it1))
             System.out.println("Adding flower successfully");
         else
             System.out.println("Sorry, cannot add flower");
-    } else if (typeOrder == 'C') {
+    } // end if
+    else if (typeOrder == 'C') {
                String nC = input.nextLine();
         int pC = input.nextInt();
         char sc = input.next().charAt(0);
@@ -53,9 +55,10 @@ case 1:
             System.out.println("Adding ChocolateBox successfully");
         else
             System.out.println("Sorry, cannot add ChocolateBox");
-    }
+    } // end if
     break;
 case 2:
+	// remove item
 	System.out.println("Enter the item name you want to remove: Rose, Lily,Blossom and ChocolateBox ");
 	String removeItem = input.next();
 if(ord.removeItem(removeItem))
@@ -66,7 +69,7 @@ System.out.println("Sorry, can not remove");
 
 	break;	
 case 3:
-	System.out.println("Enter the item name you want to serch: Rose, Lily,Blossom and ChocolateBox ");
+	System.out.println("Check  is there  a chChocolateBox ?  ");
 	String serchItem = input.next();
 	if(ord.serchChocolateBox(serchItem))
 	System.out.println("Yes, there is Chocolate Box. ");
@@ -90,14 +93,14 @@ default:
 	
 			
 	
-}
+} // end switch
 System.out.println("Do you want to select another option?");
 System.out.println("Enter yes or 6 to exite: ");
  end =input.next();
 
-}
+} // end do
 while(op!=6 && end.equalsIgnoreCase("yes"));
 
-}
-}
+} // end main
+} // end class
 
