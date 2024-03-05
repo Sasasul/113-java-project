@@ -1,4 +1,4 @@
-import java.util*;
+import java.util.Scanner;
 public class FlowerStore {
 static Scanner input= new Scanner(System.in);	
 public static void main(String[]args) {
