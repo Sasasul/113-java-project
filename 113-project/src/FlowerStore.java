@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util*;
 public class FlowerStore {
 static Scanner input= new Scanner(System.in);	
 public static void main(String[]args) {
@@ -45,7 +45,7 @@ case 1:
         else
             System.out.println("Sorry, cannot add flower");
     } // end if
-    else if (typeOrder == 'C') {
+    else if (typeOrder == 'C') {  // now obj from user
                String nC = input.nextLine();
         int pC = input.nextInt();
         char sc = input.next().charAt(0);
