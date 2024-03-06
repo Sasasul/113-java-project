@@ -46,9 +46,11 @@ case 1:
             System.out.println("Sorry, cannot add flower");
     } // end if
     else if (typeOrder == 'C') {  // now obj from user
+    	 System.out.println("Enter the name ,price and size L,M,S :");
                String nC = input.nextLine();
         int pC = input.nextInt();
         char sc = input.next().charAt(0);
+        //input.nextLine(); 
         Items it2 = new ChocolateBox(nC, pC, sc);
 
         if (ord.addItem(it2))
@@ -84,7 +86,7 @@ total= ord.calculateTotalprice();
    System.out.println("The total price is:"+ total+ " ");
 	break;	
 case 5:
-	System.out.println(ord.toString());
+	System.out.println(ord);
 	break;	
 
 default:
