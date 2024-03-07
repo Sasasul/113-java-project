@@ -32,7 +32,7 @@ case 1:
 	// Add item
     System.out.println("Do you want to add Flowers 'F' or ChocolateBox 'C': ");
     char typeOrder = input.next().charAt(0);
-    input.nextLine();  // Consume the newline character
+  
     if (typeOrder == 'F') {
         System.out.println("Enter the name of flower, price, and type each number represents a flower type #1 Rose, 2# Lily, 3#Blossom:");
         String nF = input.next();
@@ -47,11 +47,12 @@ case 1:
     } // end if
     else if (typeOrder == 'C') {  // now obj from user
     	 System.out.println("Enter the name ,price and size L,M,S :");
-               String nC = input.nextLine();
+  
+               String nC = input.next();
         int pC = input.nextInt();
-        char sc = input.next().charAt(0);
-        //input.nextLine(); 
-        Items it2 = new ChocolateBox(nC, pC, sc);
+                char sc = input.next().charAt(0);
+     
+                Items it2 = new ChocolateBox(nC, pC, sc);
 
         if (ord.addItem(it2))
             System.out.println("Adding ChocolateBox successfully");
@@ -71,7 +72,7 @@ System.out.println("Sorry, can not remove");
 
 	break;	
 case 3:
-	System.out.println("Check  is there  a chChocolateBox ?  ");
+	System.out.println("Check  is there  a ChocolateBox ?, enter ChocolateBox  ");
 	String serchItem = input.next();
 	if(ord.serchChocolateBox(serchItem))
 	System.out.println("Yes, there is Chocolate Box. ");
