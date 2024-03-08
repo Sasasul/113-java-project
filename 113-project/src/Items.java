@@ -1,32 +1,31 @@
 
 public abstract  class Items {
     
-protected String name;
+//protected String name;*
 protected double price;
+//protected char size;   حذفتها لأن الورد ما عنه  حجم *
 
 //Constructors 
-public Items(String name, int price){  
-this.name=name;
-this.price=price;
+public Items(){  
+//this.name=name;*
+this.price=0;
+
 }
 
 public Items(Items i){
-	this.name=i.name;
+	//this.name=i.name;*
 	this.price=i.price;
+	
 }
 //methods
 public abstract double caculatePrice();
 
 // setters and getters
 public String toString(){
-    return "name is : " + name + "price is: " + price;
+    return "price is: " + price;
 }
-public String getName() {
-	return name;
-}
-public void setName(String name) {
-	this.name = name;
-}
+
+
 public double getPrice() {
 	return price;
 }

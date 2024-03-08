@@ -1,63 +1,61 @@
 
 public class ChocolateBox extends Items {
 
-private int chocolateStock = 50;
-private char size;
+	private int chocolateStock = 50;
+	private char size;
 
-public ChocolateBox(String name, int price, char size){
-super(name,price);
-this.size=size;
-}
+	public ChocolateBox(char size) {
+		super();
+		price = 10;
+		this.size = size;
+		chocolateStock--;
+	}
 
+	public ChocolateBox(ChocolateBox i) {
+		super(i);
+		size = i.size;
+	}
 
-public ChocolateBox(ChocolateBox i) {
-	super(i);
-	size=i.size;
-}
+	public double caculatePrice() {
 
+		switch (this.size) {
 
+		case 'S':
+			return 60;
 
-public double caculatePrice(){
+		case 'M':
+			return 80;
 
-switch(this.size){
+		case 'L':
+			return 100;
 
-    case 'S':
-    return 60;
+		default:
+			return 0;
+		}
+	}
 
-    case 'M':
-    return 80;
+	public void setPrice(double price) {
+		this.price = price; // #@
+	}
 
-    case 'L':
-    return 100;
+	public String toString() {
+		return super.toString() + "size is: " + size + "\n";
+	}
 
-    default:
-    return 0;
-}  
-}
+	public int getChocolateStock() {
+		return chocolateStock;
+	}
 
-public void setPrice(double price){
-    this.price=price;                    //#@
-    }
+	public void setChocolateStock() {
+		this.chocolateStock -= 1;
+	}
 
+	public char getSize() {
+		return size;
+	}
 
-public String toString(){
-    return super.toString() + "size is: " + size + "\n";
-}
-
-public int getChocolateStock() {
-	return chocolateStock;
-}
-
-public void setChocolateStock() {
-	this.chocolateStock-=1;
-}
-
-public char getSize() {
-	return size;
-}
-
-public void setSize(char size) {
-	this.size = size;
-}
+	public void setSize(char size) {
+		this.size = size;
+	}
 
 }

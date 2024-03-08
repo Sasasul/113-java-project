@@ -17,10 +17,11 @@ public class Order {
 		if (numOfItems < itemList.length) {
 			if (i instanceof ChocolateBox) {
 				itemList[numOfItems++] = new ChocolateBox((ChocolateBox) i);
-				((ChocolateBox)i).setChocolateStock();}
+				}
 			else {
+				
 				itemList[numOfItems++] = new Flower((Flower) (i));
-				((Flower)i).setFlowerStock();}
+			}//}
 			return true;
 		} // end if
 		else
@@ -30,7 +31,7 @@ public class Order {
 	public boolean removeItem(String name) {
 		boolean ItemRemoved = false;
 		for (int i = 0; i < numOfItems; i++) {
-			if (itemList[i].getName().equals(name)) {
+			if (itemList[i].getClass().getName().equals(name)) {
 				itemList[i] = null;
 				ItemRemoved = true;
 			} // end if
@@ -58,7 +59,7 @@ public class Order {
 
 	public String toString() {
 		String info = "Order Number: " + numOfOrder + "\n" + "Customer info: " + customer.toString();
-		for (int i = 0; i < numOfItems; i++) {
+		for (int i = 0; i < numOfItems-1; i++) {
 			info += itemList[i].toString();
 		}
 		return info;
