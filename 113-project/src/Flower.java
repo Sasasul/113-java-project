@@ -5,7 +5,7 @@ public class Flower extends Items {
 						// عن الاسم؟ عموما بعتبر
 	private int flowerStock = 250; // يحتاج اسوي عداد في كلاساتي؟
 	private int numOfFlowers;// number of flowers the coustmer want to add
-	// ^^سوي لها سيت بالمين
+	// ^^-سوي لها سيت بالمين
 
 	public Flower(int type, int numOfFlowers) {
 		super();
