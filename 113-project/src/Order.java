@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Order {
 	static Scanner input= new Scanner(System.in);	
-
+//
 	private int numOfOrder;
 	private Items[] itemList;
 	private int numOfItems;

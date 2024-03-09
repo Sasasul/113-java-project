@@ -5,43 +5,24 @@ public class Flower extends Items {
 	private int flowerStock = 250; // يحتاج اسوي عداد في كلاساتي؟
 	private int numOfFlowers;// number of flowers the coustmer want to add
 
-<<<<<<< HEAD
 	public Flower(int type,int numofFlowes) {
-=======
-	public Flower(int type, int numOfFlowers) {
->>>>>>> branch 'main' of https://github.com/Sasasul/113-java-project.git
 		super();
 		this.type = type;
-<<<<<<< HEAD
 		this.numOfFlowers=numofFlowes;
-=======
-		this.numOfFlowers=numOfFlowers;
->>>>>>> branch 'main' of https://github.com/Sasasul/113-java-project.git
 
 		switch (this.type) {
 
 		case 1:
 			price = 100;
-<<<<<<< HEAD
 				break;
-=======
-			break;
-
->>>>>>> branch 'main' of https://github.com/Sasasul/113-java-project.git
 		case 2:
 			price = 200;
 			break;
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'main' of https://github.com/Sasasul/113-java-project.git
 		case 3:
 			price = 300;
 			break;
-<<<<<<< HEAD
-=======
 
->>>>>>> branch 'main' of https://github.com/Sasasul/113-java-project.git
 		default:
 			price = 0;
 			break;
@@ -59,14 +40,10 @@ public class Flower extends Items {
 		switch (type) {
 
 		case 1:
-<<<<<<< HEAD
-			return price * numOfFlowers;
-=======
 			System.out.println(" i am in case one ");
 			System.out.println(numOfFlowers);
 			return price * numOfFlowers;
 		
->>>>>>> branch 'main' of https://github.com/Sasasul/113-java-project.git
 		case 2:
 			return price * numOfFlowers;
 
