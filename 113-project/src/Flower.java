@@ -2,7 +2,7 @@
 public class Flower extends Items {
 
 	public int type; // each number represents a flower type #1 Rose, 2# Lily, 3#Blossom 	
-	private int flowerStock = 250; // يحتاج اسوي عداد في كلاساتي؟
+	private int flowerStock = 250; 
 	private int numOfFlowers;// number of flowers the coustmer want to add
 
 	public Flower(int type,int numofFlowes) {
@@ -27,6 +27,7 @@ public class Flower extends Items {
 			price = 0;
 			break;
 		}
+		
 		flowerStock--;
 	}
 
@@ -36,12 +37,12 @@ public class Flower extends Items {
 	}
 
 	public double caculatePrice() {
+
 		System.out.println("num is "+numOfFlowers);
+
 		switch (type) {
 
 		case 1:
-			System.out.println(" i am in case one ");
-			System.out.println(numOfFlowers);
 			return price * numOfFlowers;
 		
 		case 2:
@@ -80,7 +81,7 @@ public class Flower extends Items {
 	}
 
 	public void setPrice(double price) {
-		this.price = price; // @@
+		this.price = price; 
 	}
 
 }

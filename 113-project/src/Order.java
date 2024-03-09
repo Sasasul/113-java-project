@@ -1,31 +1,31 @@
 import java.util.Scanner;
 
 public class Order {
-	static Scanner input= new Scanner(System.in);	
-//
-	private int numOfOrder;
-	private Items[] itemList;
-	private int numOfItems;
-	private Customer customer;
+static Scanner input= new Scanner(System.in);	
 
-	public Order(Customer customer) { // Constructor
-		this.customer = new Customer(customer.getName(), customer.getId());
-		itemList = new Items[10];
-		numOfItems = 0;
-		numOfOrder++;
-	}
+private int numOfOrder;
+private Items[] itemList;
+private int numOfItems;
+private Customer customer;
+
+public Order(Customer customer) { // Constructor
+    this.customer = new Customer(customer.getName(), customer.getId());
+	itemList = new Items[10];
+	numOfItems = 0;
+	numOfOrder++;
+}
 
 	// Methods
-	public boolean addItem(Items i) {
-		if (numOfItems < itemList.length) {
-			if (i instanceof ChocolateBox) {
-				itemList[numOfItems++] = new ChocolateBox((ChocolateBox) i);
-				}
-			else if((i instanceof Flower)){
-				System.out.println("how many Flowers do want from this type? ");
-			       int numperOfFlowes= input.nextInt();
-				itemList[numOfItems++] = new Flower(((Flower)i).type,numperOfFlowes);
-			}//}
+public boolean addItem(Items i) {
+	if (numOfItems < itemList.length) {
+		if (i instanceof ChocolateBox) {
+		itemList[numOfItems++] = new ChocolateBox((ChocolateBox) i);
+	    }
+	else if((i instanceof Flower)){
+	    System.out.println("how many Flowers do want from this type? ");
+		int numperOfFlowes= input.nextInt();
+		itemList[numOfItems++] = new Flower(((Flower)i).type,numperOfFlowes);
+	}//}
 			return true;
 		} // end if
 		else
@@ -35,9 +35,10 @@ public class Order {
 	public boolean removeItem(String name) {
 
 		boolean ItemRemoved = false;
-		for (int i = 0; i < numOfItems; i++) {
+		for (int i = 0; i<numOfItems-1; i++) {
 			if (itemList[i].getClass().getName().equals(name)) {
-				itemList[i] = null;
+				itemList[i] = itemList[++i];
+				itemList[--numOfItems]=null;
 				ItemRemoved = true;
 			} // end if
 		} // end for
