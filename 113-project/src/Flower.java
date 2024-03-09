@@ -1,8 +1,7 @@
 
 public class Flower extends Items {
 
-	private int type; // each number represents a flower type #1 Rose, 2# Lily, 3#Blossom وش فرق النوع
-						// عن الاسم؟ عموما بعتبر
+	private int type; // each number represents a flower type #1 Rose, 2# Lily, 3#Blossom 	
 	private int flowerStock = 250; // يحتاج اسوي عداد في كلاساتي؟
 	private int numOfFlowers;// number of flowers the coustmer want to add
 	// ^^-سوي لها سيت بالمين
@@ -25,7 +24,7 @@ public class Flower extends Items {
 		default:
 			price = 0;
 		}
-		flowerStock--;//
+		flowerStock--;
 	}
 
 	public Flower(Flower i) {
@@ -33,7 +32,7 @@ public class Flower extends Items {
 		type = i.type;
 	}
 
-	public double caculatePrice() {// عشاني حطيت السعر في الكونستركتر صار هذا ماله فايده
+	public double caculatePrice() {
 
 		switch (this.type) {
 
