@@ -34,12 +34,15 @@ case 1:
     char typeOrder = input.next().charAt(0);
   
     if (typeOrder == 'F') {
-        System.out.println("Enter the name of flower, price, and type each number represents a flower type #1 Rose, 2# Lily, 3#Blossom:");
-        String nF = input.next();
-        int pF = input.nextInt();
+        System.out.println("Enter the type each number represents a flower type #1 Rose, 2# Lily, 3#Blossom: ");
         int tF = input.nextInt();
-        Items it1 = new Flower(nF, pF, tF); // now obj from user
-        
+        System.out.println("how many Flowers do want from this type? ");
+        int numperOfFlowes= input.nextInt();
+        //String nF = input.next();*
+        //int pF = input.nextInt();*
+        int tF = input.nextInt();
+        Items it1 = new Flower(tF, pF); // now obj from user
+        //هنا مفروض يطلب من اليوزر التايب وعدد الوردات
         if (ord.addItem(it1))
             System.out.println("Adding flower successfully");
         else
@@ -53,7 +56,7 @@ case 1:
                 char sc = input.next().charAt(0);
      
                 Items it2 = new ChocolateBox(nC, pC, sc);
-
+                				//هنا يطلب من اليوزر الحجم بس
         if (ord.addItem(it2))
             System.out.println("Adding ChocolateBox successfully");
         else
