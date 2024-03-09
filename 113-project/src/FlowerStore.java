@@ -37,24 +37,22 @@ do {
         if (Character.toUpperCase(typeOrder)== 'F') {
         System.out.println("Enter the type each number represents a flower type #1 Rose, 2# Lily, 3#Blossom: ");
         int typeOfFlower = input.nextInt();
-<<<<<<< HEAD
+
         //System.out.println("how many Flowers do want from this type? ");
        int numperOfFlowes=0;//ذاا
         Items it1 = new Flower(typeOfFlower,numperOfFlowes);
         //((Flower)it1).setNumOfFlowers(numperOfFlowes); 
         
         //هنا مفروض يطلب من اليوزر التايب وعدد الوردات
-        if (ord.addItem(it1))
-=======
-        System.out.println("how many Flowers do want from this type? ");
-        int numOfFlowers= input.nextInt();
-        Items it1 = new Flower(typeOfFlower, numOfFlowers);
         if (order.addItem(it1))
->>>>>>> branch 'main' of https://github.com/Sasasul/113-java-project.git
+
+  //     ** System.out.println("how many Flowers do want from this type? ");
+       // int numOfFlowers= input.nextInt();
+     //   Items it1 = new Flower(typeOfFlower, numOfFlowers);
+        if (order.addItem(it1))
             System.out.println("Adding flower successfully");
         else
             System.out.println("Sorry, cannot add flower");
-<<<<<<< HEAD
     } // end if
     else if (typeOrder == 'C') {  // new obj from user
     	 System.out.println("Enter the name ,price and size L,M,S :");
@@ -65,9 +63,8 @@ do {
      
                 Items it2 = new ChocolateBox(sizeOfChocolate);
                 				
-        if (ord.addItem(it2))
+        if (order.addItem(it2))
             System.out.println("Adding ChocolateBox successfully");
-=======
         } // end if
 
     
@@ -77,7 +74,6 @@ do {
         Items it2 = new ChocolateBox(sizeOfChocolate);    				
         if (order.addItem(it2))
         System.out.println("Adding ChocolateBox successfully");
->>>>>>> branch 'main' of https://github.com/Sasasul/113-java-project.git
         else
         System.out.println("Sorry, cannot add ChocolateBox");
         } // end if
