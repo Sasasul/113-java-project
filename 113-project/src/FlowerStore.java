@@ -1,30 +1,27 @@
 import java.util.Scanner;
 public class FlowerStore {
 public static void main(String[]args) {
-	 Scanner input= new Scanner(System.in);	
 
-				//hhhh
+Scanner input= new Scanner(System.in);		
 System.out.println("_______Flower Store_______");	
-System.out.println("Welcome to Flower Store, enter your name and id : ");	
+System.out.println("Welcome to our Flower Store, enter your name and id: ");	
 String name= input.next();
 String ID = input.next();
 
-Customer c1= new Customer(name,ID);
-Order order= new Order(c1);
+Customer customer01= new Customer(name,ID);
+Order order= new Order(customer01);
 
 int customerChose;
-String end;
-
+String chooseAnotherOption;
 do {
-
 	System.out.println("Enter your menu option:");	
-	System.out.println("1- Add Item");		
-	System.out.println("2- Remove Item");		
-	System.out.println("3- There  is a ChoclateBox ");		
-	System.out.println("4- calculate Total price ");	
-	System.out.println("5- Disply all order information: ");
-	System.out.println("6- Exite ");
-	System.out.println("your choice is :  ");
+	System.out.println("1-Add Item");		
+	System.out.println("2-Remove Item");		
+	System.out.println("3-There  is a ChoclateBox");		
+	System.out.println("4-Calculate Total price");	
+	System.out.println("5-Disply all order information:");
+	System.out.println("6-Exite");
+	System.out.println("your choice is: ");
 	customerChose= input.nextInt();
 	
     switch(customerChose){
@@ -35,76 +32,55 @@ do {
         char typeOrder = input.next().charAt(0);
   
         if (Character.toUpperCase(typeOrder)== 'F') {
-        System.out.println("Enter the type each number represents a flower type #1 Rose, 2# Lily, 3#Blossom: ");
+        System.out.println("Enter the type each number represents a flower type #1 Rose, 2# Lily, 3# Blossom: ");
         int typeOfFlower = input.nextInt();
-
-        //System.out.println("how many Flowers do want from this type? ");
-       int numperOfFlowes=0;//ذاا
-        Items it1 = new Flower(typeOfFlower,numperOfFlowes);
-        //((Flower)it1).setNumOfFlowers(numperOfFlowes); 
-        
-        //هنا مفروض يطلب من اليوزر التايب وعدد الوردات
+        System.out.println("How many flowers do want from this type? ");
+        int numOfFlowers= input.nextInt();
+        Items it1 = new Flower(typeOfFlower, numOfFlowers);
         if (order.addItem(it1))
-
-  //     ** System.out.println("how many Flowers do want from this type? ");
-       // int numOfFlowers= input.nextInt();
-     //   Items it1 = new Flower(typeOfFlower, numOfFlowers);
-        if (order.addItem(it1))
-            System.out.println("Adding flower successfully");
+            System.out.println("Added flower successfully");
         else
-            System.out.println("Sorry, cannot add flower");
-    } // end if
-    else if (typeOrder == 'C') {  // new obj from user
-    	 System.out.println("Enter the name ,price and size L,M,S :");
-  
-           
-       
-                char sizeOfChocolate = input.next().charAt(0);
-     
-                Items it2 = new ChocolateBox(sizeOfChocolate);
-                				
-        if (order.addItem(it2))
-            System.out.println("Adding ChocolateBox successfully");
+            System.out.println("Sorry, we can't add the flower");
         } // end if
 
     
         else if (Character.toUpperCase(typeOrder) == 'C') {  
-    	System.out.println("Enter the name ,price and size L,M,S :");
+    	System.out.println("Enter the name, price, and size (L)or(M)or(S):");
         char sizeOfChocolate = input.next().charAt(0);
         Items it2 = new ChocolateBox(sizeOfChocolate);    				
         if (order.addItem(it2))
-        System.out.println("Adding ChocolateBox successfully");
+        System.out.println("Added ChocolateBox successfully");
         else
-        System.out.println("Sorry, cannot add ChocolateBox");
+        System.out.println("Sorry, we can't add the Chocolate Box");
         } // end if
         break;
 
 
         case 2:
 	    // remove item
-	    System.out.println("Enter the item name you want to remove: Rose, Lily,Blossom and ChocolateBox ");
+	    System.out.println("Enter the item name that you want to remove: Rose, Lily, Blossom or Chocolate Box name");
 	    String removeItem = input.next();
         if(order.removeItem(removeItem))
-        System.out.println("removing succssfuly.");
+        System.out.println("Removed succssfuly.");
         else
-        System.out.println("Sorry, can not remove");
+        System.out.println("Sorry, we can't remove it");
 	    break;	
 
 
         case 3:
-	    System.out.println("Check  is there  a ChocolateBox ?, enter ChocolateBox  ");
+	    System.out.println("Check is there a ChocolateBox? enter Chocolate Box name: ");
 	    String serchItem = input.next();
 	    if(order.serchChocolateBox(serchItem))
-	    System.out.println("Yes, there is Chocolate Box. ");
+	    System.out.println("Yes, there is a Chocolate Box.");
         else
-        System.out.println("No, there is not Chocolate Box. ");
+        System.out.println("No, there is no Chocolate Box.");
 	    break;
 
 
         case 4:
         double total=0;
         total= order.calculateTotalprice();
-        System.out.println("The total price is: "+ total + "" );
+        System.out.println("The total price is: " + total + "" );
 	    break;
 
 
@@ -114,7 +90,7 @@ do {
 
 
         default:
-        System.out.println("invaild input");
+        System.out.println("## invaild input ##");
 	
 	
 			
@@ -123,10 +99,10 @@ do {
 
 System.out.println("Do you want to select another option?");
 System.out.println("Enter yes or 6 to exite: ");
- end =input.next();
+ chooseAnotherOption =input.next();
 
 } // end do
-while(customerChose!=6 && end.equalsIgnoreCase("yes"));
+while(customerChose!=6 && chooseAnotherOption.equalsIgnoreCase("yes"));
 
 } // end main
 } // end class
