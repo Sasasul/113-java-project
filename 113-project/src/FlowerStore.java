@@ -14,14 +14,14 @@ Order order= new Order(customer01);
 int customerChose;
 String chooseAnotherOption;
 do {
-	System.out.println("Enter your menu option:");	
+	System.out.println("\nEnter your menu option:");	
 	System.out.println("1-Add Item");		
 	System.out.println("2-Remove Item");		
 	System.out.println("3-There  is a ChoclateBox");		
 	System.out.println("4-Calculate Total price");	
 	System.out.println("5-Disply all order information:");
 	System.out.println("6-Exite");
-	System.out.println("your choice is: ");
+	System.out.println("your choice is:");
 	customerChose= input.nextInt();
 	
     switch(customerChose){
@@ -38,9 +38,9 @@ do {
         int numOfFlowers= input.nextInt();
         Items it1 = new Flower(typeOfFlower, numOfFlowers);
         if (order.addItem(it1))
-            System.out.println("Added flower successfully");
+            System.out.println("Added flower successfully\n");
         else
-            System.out.println("Sorry, we can't add the flower");
+            System.out.println("Sorry, we can't add the flower\n");
         } // end if
 
     
@@ -59,25 +59,27 @@ do {
         case 2:
 	    // remove item
 	    System.out.println("Enter the item name that you want to remove: Rose, Lily, Blossom or Chocolate Box name");
-	    String removeItem = input.next();
+	    String removeItem = (input.next()).toUpperCase();
         if(order.removeItem(removeItem))
-        System.out.println("Removed succssfuly.");
+        System.out.println("Removed succssfuly.\n");
         else
-        System.out.println("Sorry, we can't remove it");
+        System.out.println("Sorry, we can't remove it.\n");
 	    break;	
 
 
         case 3:
+        // serch item
 	    System.out.println("Check is there a ChocolateBox? enter Chocolate Box name: ");
 	    String serchItem = input.next();
 	    if(order.serchChocolateBox(serchItem))
-	    System.out.println("Yes, there is a Chocolate Box.");
+	    System.out.println("Yes, there is a Chocolate Box.\n");
         else
-        System.out.println("No, there is no Chocolate Box.");
+        System.out.println("No, there is no Chocolate Box.\n");
 	    break;
 
 
         case 4:
+        // calculate Total price
         double total=0;
         total= order.calculateTotalprice();
         System.out.println("The total price is: " + total + "" );
@@ -85,12 +87,13 @@ do {
 
 
         case 5:
+        //Disply all order information
 	    System.out.println(order);
 	    break;	
 
 
         default:
-        System.out.println("## invaild input ##");
+        System.out.println("## invaild input ##\n");
 	
 	
 			
@@ -98,8 +101,8 @@ do {
     } // end switch
 
 System.out.println("Do you want to select another option?");
-System.out.println("Enter yes or 6 to exite: ");
- chooseAnotherOption =input.next();
+System.out.println("Enter yes or 6 to exite: "); // what if it is another input
+chooseAnotherOption =input.next();
 
 } // end do
 while(customerChose!=6 && chooseAnotherOption.equalsIgnoreCase("yes"));
