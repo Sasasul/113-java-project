@@ -1,13 +1,11 @@
 
 public abstract  class Items {
     
-//protected String name;*
 protected double price;
-//protected char size;   حذفتها لأن الورد ما عنه  حجم *
+
 
 //Constructors 
 public Items(){  
-//this.name=name;*
 this.price=0;
 
 }

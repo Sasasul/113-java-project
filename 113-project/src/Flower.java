@@ -6,20 +6,24 @@ public class Flower extends Items {
 	private int numOfFlowers;// number of flowers the coustmer want to add
 	// ^^-سوي لها سيت بالمين
 
-	public Flower(int type) {
+	public Flower(int type, int numOfFlowers) {
 		super();
 		this.type = type;
+		this.numOfFlowers=numOfFlowers;
 
 		switch (this.type) {
 
 		case 1:
 			price = 100;
+			break;
 
 		case 2:
 			price = 200;
+			break;
 
 		case 3:
 			price = 300;
+			break;
 
 		default:
 			price = 0;
@@ -33,11 +37,13 @@ public class Flower extends Items {
 	}
 
 	public double caculatePrice() {
-
+		System.out.println("num is "+numOfFlowers);
 		switch (type) {
 
 		case 1:
-			return 7 * numOfFlowers;
+			System.out.println(" i am in case one ");
+			System.out.println(numOfFlowers);
+			return price * numOfFlowers;
 		
 		case 2:
 			return 5 * numOfFlowers;

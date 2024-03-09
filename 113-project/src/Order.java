@@ -6,7 +6,7 @@ public class Order {
 	private Customer customer;
 
 	public Order(Customer customer) { // Constructor
-		customer = new Customer(customer.getName(), customer.getId());
+		this.customer = new Customer(customer.getName(), customer.getId());
 		itemList = new Items[10];
 		numOfItems = 0;
 		numOfOrder++;
@@ -29,6 +29,7 @@ public class Order {
 	}
 
 	public boolean removeItem(String name) {
+
 		boolean ItemRemoved = false;
 		for (int i = 0; i < numOfItems; i++) {
 			if (itemList[i].getClass().getName().equals(name)) {
@@ -51,9 +52,12 @@ public class Order {
 
 	public double calculateTotalprice() {
 		double TotalPrice = 0;
+
 		for (int i = 0; i < numOfItems; i++) {
 			TotalPrice += itemList[i].caculatePrice();
+			System.out.println(TotalPrice);
 		}
+		System.out.println(TotalPrice);
 		return TotalPrice;
 	}
 
