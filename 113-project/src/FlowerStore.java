@@ -1,8 +1,8 @@
 import java.util.Scanner;
 public class FlowerStore {
-static Scanner input= new Scanner(System.in);	
 public static void main(String[]args) {
-	
+	 Scanner input= new Scanner(System.in);	
+
 				
 System.out.println("_______Flower Store_______");	
 System.out.println("Welcome to Flower Store, enter your name and id : ");	
@@ -36,11 +36,10 @@ case 1:
     if (typeOrder == 'F') { //jana
         System.out.println("Enter the type each number represents a flower type #1 Rose, 2# Lily, 3#Blossom: ");
         int typeOfFlower = input.nextInt();
-        System.out.println("how many Flowers do want from this type? ");
-        int numperOfFlowes= input.nextInt();
-
-        Items it1 = new Flower(typeOfFlower);
-        ((Flower)it1).setNumOfFlowers(numperOfFlowes); 
+        //System.out.println("how many Flowers do want from this type? ");
+       int numperOfFlowes=0;//ذاا
+        Items it1 = new Flower(typeOfFlower,numperOfFlowes);
+        //((Flower)it1).setNumOfFlowers(numperOfFlowes); 
         
         //هنا مفروض يطلب من اليوزر التايب وعدد الوردات
         if (ord.addItem(it1))
@@ -48,7 +47,7 @@ case 1:
         else
             System.out.println("Sorry, cannot add flower");
     } // end if
-    else if (typeOrder == 'C') {  // now obj from user
+    else if (typeOrder == 'C') {  // new obj from user
     	 System.out.println("Enter the name ,price and size L,M,S :");
   
            

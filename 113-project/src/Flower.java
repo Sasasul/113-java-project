@@ -1,28 +1,29 @@
 
 public class Flower extends Items {
 
-	private int type; // each number represents a flower type #1 Rose, 2# Lily, 3#Blossom 	
+	public int type; // each number represents a flower type #1 Rose, 2# Lily, 3#Blossom 	
 	private int flowerStock = 250; // يحتاج اسوي عداد في كلاساتي؟
 	private int numOfFlowers;// number of flowers the coustmer want to add
-	// ^^-سوي لها سيت بالمين
 
-	public Flower(int type) {
+	public Flower(int type,int numofFlowes) {
 		super();
 		this.type = type;
+		this.numOfFlowers=numofFlowes;
 
 		switch (this.type) {
 
 		case 1:
 			price = 100;
-
+				break;
 		case 2:
 			price = 200;
-
+			break;
 		case 3:
 			price = 300;
-
+			break;
 		default:
 			price = 0;
+			break;
 		}
 		flowerStock--;
 	}
@@ -37,13 +38,12 @@ public class Flower extends Items {
 		switch (type) {
 
 		case 1:
-			return 7 * numOfFlowers;
-		
+			return price * numOfFlowers;
 		case 2:
-			return 5 * numOfFlowers;
+			return price * numOfFlowers;
 
 		case 3:
-			return 6 * numOfFlowers;
+			return price * numOfFlowers;
 
 		default:
 			return 0;

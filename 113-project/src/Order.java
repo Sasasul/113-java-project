@@ -1,12 +1,15 @@
+import java.util.Scanner;
 
 public class Order {
+	static Scanner input= new Scanner(System.in);	
+
 	private int numOfOrder;
 	private Items[] itemList;
 	private int numOfItems;
 	private Customer customer;
 
 	public Order(Customer customer) { // Constructor
-		customer = new Customer(customer.getName(), customer.getId());
+		this.customer = new Customer(customer.getName(), customer.getId());
 		itemList = new Items[10];
 		numOfItems = 0;
 		numOfOrder++;
@@ -18,9 +21,10 @@ public class Order {
 			if (i instanceof ChocolateBox) {
 				itemList[numOfItems++] = new ChocolateBox((ChocolateBox) i);
 				}
-			else {
-				
-				itemList[numOfItems++] = new Flower((Flower) (i));
+			else if((i instanceof Flower)){
+				System.out.println("how many Flowers do want from this type? ");
+			       int numperOfFlowes= input.nextInt();
+				itemList[numOfItems++] = new Flower(((Flower)i).type,numperOfFlowes);
 			}//}
 			return true;
 		} // end if
@@ -52,6 +56,7 @@ public class Order {
 	public double calculateTotalprice() {
 		double TotalPrice = 0;
 		for (int i = 0; i < numOfItems; i++) {
+			if(itemList[i]!=null)
 			TotalPrice += itemList[i].caculatePrice();
 		}
 		return TotalPrice;
