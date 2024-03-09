@@ -39,7 +39,7 @@ public class Order {
 		return ItemRemoved;
 	}
 
-	public boolean serchChocolateBox(String s) {
+	public boolean serchChocolateBox(String s) {//بحث عن الشكولاته بس ولا كلهم
 		boolean IsThereChoclateBox = false;
 		for (int i = 0; i < numOfItems; i++) {
 			if (itemList[i] instanceof ChocolateBox) {
