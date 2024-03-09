@@ -33,6 +33,7 @@ public class Order {
 	}
 
 	public boolean removeItem(String name) {
+
 		boolean ItemRemoved = false;
 		for (int i = 0; i < numOfItems; i++) {
 			if (itemList[i].getClass().getName().equals(name)) {
@@ -54,10 +55,13 @@ public class Order {
 
 	public double calculateTotalprice() {
 		double TotalPrice = 0;
+
 		for (int i = 0; i < numOfItems; i++) {
 			if(itemList[i]!=null)
 			TotalPrice += itemList[i].caculatePrice();
+			System.out.println(TotalPrice);
 		}
+		System.out.println(TotalPrice);
 		return TotalPrice;
 	}
 
