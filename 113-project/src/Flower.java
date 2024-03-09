@@ -6,7 +6,7 @@ public class Flower extends Items {
 	private int numOfFlowers;// number of flowers the coustmer want to add
 	// ^^-سوي لها سيت بالمين
 
-	public Flower(int type, int numOfFlowers) {
+	public Flower(int type) {
 		super();
 		this.type = type;
 
@@ -34,11 +34,11 @@ public class Flower extends Items {
 
 	public double caculatePrice() {
 
-		switch (this.type) {
+		switch (type) {
 
 		case 1:
 			return 7 * numOfFlowers;
-		// الحين ذا سعر وردة ولاباقة
+		
 		case 2:
 			return 5 * numOfFlowers;
 

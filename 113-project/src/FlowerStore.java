@@ -33,15 +33,15 @@ case 1:
     System.out.println("Do you want to add Flowers 'F' or ChocolateBox 'C': ");
     char typeOrder = input.next().charAt(0);
   
-    if (typeOrder == 'F') {
+    if (typeOrder == 'F') { //jana
         System.out.println("Enter the type each number represents a flower type #1 Rose, 2# Lily, 3#Blossom: ");
-        int tF = input.nextInt();
+        int typeOfFlower = input.nextInt();
         System.out.println("how many Flowers do want from this type? ");
         int numperOfFlowes= input.nextInt();
-        //String nF = input.next();*
-        //int pF = input.nextInt();*
-        int tF = input.nextInt();
-        Items it1 = new Flower(tF, pF); // now obj from user
+
+        Items it1 = new Flower(typeOfFlower);
+        ((Flower)it1).setNumOfFlowers(numperOfFlowes); 
+        
         //هنا مفروض يطلب من اليوزر التايب وعدد الوردات
         if (ord.addItem(it1))
             System.out.println("Adding flower successfully");
@@ -51,12 +51,12 @@ case 1:
     else if (typeOrder == 'C') {  // now obj from user
     	 System.out.println("Enter the name ,price and size L,M,S :");
   
-               String nC = input.next();
-        int pC = input.nextInt();
-                char sc = input.next().charAt(0);
+           
+       
+                char sizeOfChocolate = input.next().charAt(0);
      
-                Items it2 = new ChocolateBox(nC, pC, sc);
-                				//هنا يطلب من اليوزر الحجم بس
+                Items it2 = new ChocolateBox(sizeOfChocolate);
+                				
         if (ord.addItem(it2))
             System.out.println("Adding ChocolateBox successfully");
         else
@@ -81,14 +81,14 @@ case 3:
 	System.out.println("Yes, there is Chocolate Box. ");
 else
 System.out.println("No, there is not Chocolate Box. ");
+	break;
 
-	
-	break;	
 case 4:
 double total=0;
 total= ord.calculateTotalprice();
-   System.out.println("The total price is:"+ total+ " ");
-	break;	
+   System.out.println("The total price is:"+ total + "" );
+	break;
+
 case 5:
 	System.out.println(ord);
 	break;	

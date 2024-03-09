@@ -6,7 +6,6 @@ public class ChocolateBox extends Items {
 
 	public ChocolateBox(char size) {
 		super();
-		price = 10;
 		this.size = size;
 		chocolateStock--;
 	}

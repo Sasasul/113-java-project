@@ -58,8 +58,8 @@ public class Order {
 	}
 
 	public String toString() {
-		String info = "Order Number: " + numOfOrder + "\n" + "Customer info: " + customer.toString();
-		for (int i = 0; i < numOfItems-1; i++) {
+		String info = "Order Number: " + numOfOrder + "\n" + "Customer info: " +customer;
+		for (int i = 0; i < numOfItems; i++) {
 			info += itemList[i].toString();
 		}
 		return info;
