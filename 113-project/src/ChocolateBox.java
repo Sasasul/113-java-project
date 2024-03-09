@@ -1,11 +1,9 @@
-
 public class ChocolateBox extends Items {
 
 	private int chocolateStock = 50;
 	private char size;
 
 	public ChocolateBox(char size) {
-		super();
 		this.size = size;
 		chocolateStock--;
 	}
@@ -33,8 +31,8 @@ public class ChocolateBox extends Items {
 		}
 	}
 
-	public void setPrice(double price) {
-		this.price = price; // #@
+	public void setPrice(double price) { // هذا لازم؟
+		this.price = price; 
 	}
 
 	public String toString() {
@@ -56,5 +54,4 @@ public class ChocolateBox extends Items {
 	public void setSize(char size) {
 		this.size = size;
 	}
-
 }

@@ -1,8 +1,6 @@
-
 public abstract  class Items {
     
 protected double price;
-
 
 //Constructors 
 public Items(){  
