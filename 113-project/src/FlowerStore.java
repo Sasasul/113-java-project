@@ -18,8 +18,8 @@ public class FlowerStore {
 			System.out.println("\nEnter your menu option:");
 			System.out.println("1-Add Item");
 			System.out.println("2-Remove Item");
-			System.out.println("3-There  is a ChoclateBox");
-			System.out.println("4-Calculate Total price");
+			System.out.println("3-There is a ChoclateBox ?");
+			System.out.println("4-Calculate Total price ");
 			System.out.println("5-Disply all order information:");
 			System.out.println("6-Exite");
 			System.out.println("your choice is:");
