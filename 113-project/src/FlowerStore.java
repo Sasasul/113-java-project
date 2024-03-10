@@ -12,7 +12,7 @@ public class FlowerStore {
 		Customer customer01 = new Customer(name, ID);
 		Order order = new Order(customer01);
 
-		int customerChose;
+		int costumerchoise;
 		String chooseAnotherOption;
 		do {
 			System.out.println("\nEnter your menu option:");
@@ -23,9 +23,9 @@ public class FlowerStore {
 			System.out.println("5-Disply all order information:");
 			System.out.println("6-Exite");
 			System.out.println("your choice is:");
-			customerChose = input.nextInt();
+			costumerchoise = input.nextInt();
 
-			switch (customerChose) {
+			switch (costumerchoise) {
 
 			case 1:
 				// Add item
@@ -36,8 +36,7 @@ public class FlowerStore {
 					System.out.println(
 							"Enter the type each number represents a flower type #1 Rose, 2# Lily, 3# Blossom: ");
 					int typeOfFlower = input.nextInt();
-					System.out.println("How many flowers do want from this type? ");
-					int numOfFlowers = input.nextInt();
+					int numOfFlowers = 0;
 					Items it1 = new Flower(typeOfFlower, numOfFlowers);
 					if (order.addItem(it1))
 						System.out.println("Added flower successfully\n");
@@ -59,7 +58,7 @@ public class FlowerStore {
 			case 2:
 				// remove item
 				System.out.println(
-						"Enter the item name that you want to remove: Rose, Lily, Blossom or Chocolate Box name");
+						"Enter the item name that you want to remove: Rose, Lily, Blossom or ChocolateBox name");
 				String removeItem = (input.next()).toUpperCase();
 				if (order.removeItem(removeItem))
 					System.out.println("Removed succssfuly.\n");
@@ -95,11 +94,11 @@ public class FlowerStore {
 			} // end switch
 
 			System.out.println("Do you want to select another option?");
-			System.out.println("Enter yes or 6 to exite: "); // what if it is another input
+			System.out.println("Enter yes or 6 to exite: "); // what if it is another input  
 			chooseAnotherOption = input.next();
 
 		} // end do
-		while (customerChose != 6 && chooseAnotherOption.equalsIgnoreCase("yes"));
+		while (costumerchoise != 6 && chooseAnotherOption.equalsIgnoreCase("yes"));
 
 	} // end main
 } // end class

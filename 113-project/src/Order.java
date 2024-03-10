@@ -8,7 +8,8 @@ public class Order {
 	private int numOfItems;
 	private Customer customer;
 
-	public Order(Customer customer) { // Constructor
+	// Constructor
+	public Order(Customer customer) {
 		this.customer = new Customer(customer.getName(), customer.getId());
 		itemList = new Items[10];
 		numOfItems = 0;
@@ -21,7 +22,9 @@ public class Order {
 			if (i instanceof ChocolateBox) {
 				itemList[numOfItems++] = new ChocolateBox((ChocolateBox) i);
 			} else if ((i instanceof Flower)) {
-				System.out.println("how many Flowers do want from this type? ");
+				System.out.println("how many Flowers do want from this type? ");// asking user for the numOfFlower he
+																				// want
+																				// to add
 				int numperOfFlowes = input.nextInt();
 				itemList[numOfItems++] = new Flower(((Flower) i).type, numperOfFlowes);
 			} // }
@@ -34,17 +37,17 @@ public class Order {
 	public boolean removeItem(String name) {
 
 		boolean ItemRemoved = false;
-		for (int i = 0; i < numOfItems - 1; i++) {
-			if (itemList[i].getClass().getName().toUpperCase().equals(name)) {
+		for (int i = 0; i < numOfItems ; i++) {
+			if (itemList[i]!=null&&itemList[i].getClass().getName().equalsIgnoreCase(name)) {
 				itemList[i] = itemList[++i];
 				itemList[--numOfItems] = null;
-				ItemRemoved = true;
+				ItemRemoved= true;
 			} // end if
 		} // end for
 		return ItemRemoved;
 	}
 
-	public boolean serchChocolateBox(String s) { // بحث عن الشكولاته بس ولا كلهم
+	public boolean serchChocolateBox(String s) {
 		boolean IsThereChoclateBox = false;
 		for (int i = 0; i < numOfItems; i++) {
 			if (itemList[i] instanceof ChocolateBox)
