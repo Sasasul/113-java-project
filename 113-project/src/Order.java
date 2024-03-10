@@ -43,7 +43,7 @@ public class Order {
 				if(itemList[i] instanceof Flower && ((Flower)itemList[i]).getType())==numOfitem);{ // دمجت اللي تحت في اللي فوق 
 				//if((((Flower)itemList[i]).getType())==numOfitem){
 					for (int j = i; j < numOfItems-1; j++) {
-					itemList[j]=itemList[++j];
+					itemList[j]=itemList[j+1];
 					}
 					itemList[--numOfItems] = null;
 					}
