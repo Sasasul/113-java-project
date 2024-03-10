@@ -58,8 +58,8 @@ public class FlowerStore {
 			case 2:
 				// remove item
 				System.out.println(
-						"Enter the item name that you want to remove: Rose, Lily, Blossom or ChocolateBox name");
-				String removeItem = (input.next()).toUpperCase();
+						"Enter the item number that you want to remove: 1#Rose, 2#Lily, 3#Blossom or 4#ChocolateBox ");
+				int removeItem = input.nextInt();
 				if (order.removeItem(removeItem))
 					System.out.println("Removed succssfuly.\n");
 				else

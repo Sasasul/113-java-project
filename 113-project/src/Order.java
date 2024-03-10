@@ -34,17 +34,36 @@ public class Order {
 			return false;
 	}
 
-	public boolean removeItem(String name) {
-
+	public boolean removeItem(int numOfitem) {
 		boolean ItemRemoved = false;
-		for (int i = 0; i < numOfItems ; i++) {
+		
+	/////////////////////////محولاتي في الحل 
+		if (numOfitem<4) {
+			for (int i = 0; i < numOfItems; i++) {
+				if(itemList[i] instanceof Flower)
+				if((((Flower)itemList[i]).getType())==numOfitem){
+					for (int j = i; j < numOfItems-1; j++) {
+					itemList[j]=itemList[++j];
+					}
+					itemList[--numOfItems] = null;
+					}
+				else if (numOfitem==4) {
+					itemList[numOfitem]=itemList[++numOfitem];
+					itemList[--numOfItems] = null;
+				}
+			}
+		return true;
+		}
+		
+		///////////
+		/*for (int i = 0; i < numOfItems ; i++) {
 			if (itemList[i]!=null&&itemList[i].getClass().getName().equalsIgnoreCase(name)) {
 				itemList[i] = itemList[++i];
 				itemList[--numOfItems] = null;
 				ItemRemoved= true;
 			} // end if
-		} // end for
-		return ItemRemoved;
+		} // end for*/
+		return false;
 	}
 
 	public boolean serchChocolateBox(String s) {
