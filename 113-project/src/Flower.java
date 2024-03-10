@@ -35,7 +35,6 @@ public class Flower extends Items {
 
 	// methods
 	public double caculatePrice() {
-		System.out.println("num is " + numOfFlowers);
 		switch (type) {
 
 		case 1:
@@ -53,7 +52,15 @@ public class Flower extends Items {
 	}
 
 	public String toString() {
-		return super.toString() + " " + "Type is: " + type + "\n";
+		String nameOfFlower="";
+		if(type==1)
+			nameOfFlower="Rose";		
+		if(type==2)
+			nameOfFlower="Lily";
+		if(type==3)
+			nameOfFlower="Blossom";
+
+		return super.toString() + " " + " Flower type is: " + nameOfFlower + "\n";
 	}
 
 	// setters and getters
