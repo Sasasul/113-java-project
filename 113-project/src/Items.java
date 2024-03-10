@@ -4,8 +4,7 @@ public abstract class Items {
 
 	// Constructors
 	public Items() {
-		this.price = 0;
-
+		//this.price=0;
 	}
 
 	public Items(Items i) {
