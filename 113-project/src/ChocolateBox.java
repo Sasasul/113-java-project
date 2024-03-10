@@ -20,13 +20,17 @@ public class ChocolateBox extends Items {
 		switch (this.size) {
 
 		case 'S':
-			return 60;
+			price=60;
+			return price;
 
 		case 'M':
-			return 80;
+			price=80;
+
+			return price;
 
 		case 'L':
-			return 100;
+			price=100;
+			return price;
 
 		default:
 			return 0;
@@ -34,7 +38,7 @@ public class ChocolateBox extends Items {
 	}
 
 	public String toString() {
-		return super.toString() + "size is: " + size + "\n";
+		return super.toString() + "Chocolate Box size is: " + size + "\n";
 	}
 
 	// setters and getters
