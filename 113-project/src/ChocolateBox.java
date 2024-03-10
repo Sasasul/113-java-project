@@ -1,8 +1,9 @@
 public class ChocolateBox extends Items {
 
-	private int chocolateStock = 50;
 	private char size;
+	private int chocolateStock = 50;
 
+	// Constructor
 	public ChocolateBox(char size) {
 		this.size = size;
 		chocolateStock--;
@@ -13,6 +14,7 @@ public class ChocolateBox extends Items {
 		size = i.size;
 	}
 
+	// methods
 	public double caculatePrice() {
 
 		switch (this.size) {
@@ -31,20 +33,17 @@ public class ChocolateBox extends Items {
 		}
 	}
 
-	public void setPrice(double price) { // هذا لازم؟
-		this.price = price; 
-	}
-
 	public String toString() {
 		return super.toString() + "size is: " + size + "\n";
 	}
 
+	// setters and getters
 	public int getChocolateStock() {
 		return chocolateStock;
 	}
 
-	public void setChocolateStock() {
-		this.chocolateStock -= 1;
+	public void setChocolateStock(int chocolateStock) {
+		this.chocolateStock = chocolateStock;
 	}
 
 	public char getSize() {
