@@ -40,8 +40,8 @@ public class Order {
 	/////////////////////////محولاتي في الحل 
 		if (numOfitem<4) {
 			for (int i = 0; i < numOfItems; i++) {
-				if(itemList[i] instanceof Flower)
-				if((((Flower)itemList[i]).getType())==numOfitem){
+				if(itemList[i] instanceof Flower && ((Flower)itemList[i]).getType())==numOfitem);{ // دمجت اللي تحت في اللي فوق 
+				//if((((Flower)itemList[i]).getType())==numOfitem){
 					for (int j = i; j < numOfItems-1; j++) {
 					itemList[j]=itemList[++j];
 					}
@@ -80,9 +80,9 @@ public class Order {
 		for (int i = 0; i < numOfItems; i++) {
 			if (itemList[i] != null)
 				TotalPrice += itemList[i].caculatePrice();
-			System.out.println(TotalPrice);
+			//System.out.println(TotalPrice);  هنا حذفت جمل الطباعة وضبط 
 		}
-		System.out.println(TotalPrice);
+		//System.out.println(TotalPrice);
 		return TotalPrice;
 	}
 
