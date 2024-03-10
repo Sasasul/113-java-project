@@ -36,34 +36,26 @@ public class Order {
 
 	public boolean removeItem(int numOfitem) {
 		boolean ItemRemoved = false;
-		
-	/////////////////////////محولاتي في الحل 
-		if (numOfitem<4) {
+
+		if (numOfitem < 4) {
 			for (int i = 0; i < numOfItems; i++) {
-				if(itemList[i] instanceof Flower && ((Flower)itemList[i]).getType())==numOfitem);{ // دمجت اللي تحت في اللي فوق 
-				//if((((Flower)itemList[i]).getType())==numOfitem){
-					for (int j = i; j < numOfItems-1; j++) {
-					itemList[j]=itemList[j+1];
+				if (itemList[i] instanceof Flower && ((Flower) itemList[i]).getType() == numOfitem)
+
+					for (int j = i; j < numOfItems - 1; j++) {
+						itemList[j] = itemList[j + 1];
 					}
-					itemList[--numOfItems] = null;
-					}
-				else if (numOfitem==4) {
-					itemList[numOfitem]=itemList[++numOfitem];
-					itemList[--numOfItems] = null;
-				}
 			}
-		return true;
-		}
-		
-		///////////
-		/*for (int i = 0; i < numOfItems ; i++) {
-			if (itemList[i]!=null&&itemList[i].getClass().getName().equalsIgnoreCase(name)) {
-				itemList[i] = itemList[++i];
-				itemList[--numOfItems] = null;
-				ItemRemoved= true;
-			} // end if
-		} // end for*/
-		return false;
+			itemList[--numOfItems] = null;
+			ItemRemoved = true;
+		} else if (numOfitem == 4) {
+			itemList[numOfitem] = itemList[++numOfitem];
+			itemList[--numOfItems] = null;
+			ItemRemoved = true;
+
+		} // else if
+			// if
+		return ItemRemoved;
+
 	}
 
 	public boolean serchChocolateBox(String s) {
@@ -80,14 +72,12 @@ public class Order {
 		for (int i = 0; i < numOfItems; i++) {
 			if (itemList[i] != null)
 				TotalPrice += itemList[i].caculatePrice();
-			//System.out.println(TotalPrice);  هنا حذفت جمل الطباعة وضبط 
 		}
-		//System.out.println(TotalPrice);
 		return TotalPrice;
 	}
 
 	public String toString() {
-		String info = "Order Number: " + numOfOrder + "\n" + "Customer info: " + customer;
+		String info = "Order Number: " + numOfOrder + "\n" + "_____Customer info_____ \n" + customer;
 		for (int i = 0; i < numOfItems; i++) {
 			info += itemList[i].toString();
 		}
