@@ -8,13 +8,13 @@ public class ChocolateBox extends Items {
 		this.size = size;
 		chocolateStock--;
 	}
-
+        // copy constructor
 	public ChocolateBox(ChocolateBox i) {
 		super(i);
 		size = i.size;
 	}
 
-	// methods
+	//Methods for calculating the price depend on its size.
 	public double caculatePrice() {
 
 		switch (this.size) {
