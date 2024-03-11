@@ -13,7 +13,7 @@ public class ChocolateBox extends Items {
 		super(i);
 		size = i.size;
 	}
-
+        // methods 
 	//Methods for calculating the price depend on its size.
 	public double caculatePrice() {
 
