@@ -5,12 +5,12 @@ public class FlowerStore {
 
 		Scanner input = new Scanner(System.in);
 		System.out.println("_______Flower Store_______");
-		System.out.println("Welcome to our Flower Store, enter your name and id: ");
+		System.out.println("Welcome to our Flower Store, enter your name and id: "); // cearate Customer object
 		String name = input.next();
 		String ID = input.next();
 
 		Customer customer01 = new Customer(name, ID);
-		Order order = new Order(customer01);
+		Order order = new Order(customer01);  // cearate Order object
 
 		int costumerchoise;
 		String chooseAnotherOption;
@@ -18,7 +18,7 @@ public class FlowerStore {
 			System.out.println("\nEnter your menu option:");
 			System.out.println("1-Add Item");
 			System.out.println("2-Remove Item");
-			System.out.println("3-There is a ChoclateBox ?");
+			System.out.println("3-Is there a ChoclateBox ?");
 			System.out.println("4-Calculate Total price ");
 			System.out.println("5-Disply all order information:");
 			System.out.println("6-Exite");
@@ -31,10 +31,10 @@ public class FlowerStore {
 				// Add item
 				System.out.println("Do you want to add Flowers 'F' or ChocolateBox 'C': ");
 				char typeOrder = input.next().charAt(0);
-
+                                // if the customer want to add flower
 				if (Character.toUpperCase(typeOrder) == 'F') {
 					System.out.println(
-							"Enter the type each number represents a flower type #1 Rose, 2# Lily, 3# Blossom: ");
+							"Enter the type, each number represents a flower type #1 Rose, 2# Lily, 3# Blossom: ");
 					int typeOfFlower = input.nextInt();
 					int numOfFlowers = 0;
 					Items it1 = new Flower(typeOfFlower, numOfFlowers);
@@ -43,7 +43,7 @@ public class FlowerStore {
 					else
 						System.out.println("Sorry, we can't add the flower\n");
 				} // end if
-
+                                // if the customer want to add Chocolate Box
 				else if (Character.toUpperCase(typeOrder) == 'C') {
 					System.out.println("Enter the name, price, and size (L)or(M)or(S):");
 					char sizeOfChocolate = input.next().charAt(0);
@@ -57,8 +57,7 @@ public class FlowerStore {
 
 			case 2:
 				// remove item
-				System.out.println(
-						"Enter the item number that you want to remove: 1#Rose, 2#Lily, 3#Blossom or 4#ChocolateBox ");
+				System.out.println("Enter the item number that you want to remove: 1#Rose, 2#Lily, 3#Blossom or 4#ChocolateBox ");
 				int removeItem = input.nextInt();
 				if (order.removeItem(removeItem))
 					System.out.println("Removed succssfuly.\n");
