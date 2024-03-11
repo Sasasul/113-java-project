@@ -66,7 +66,7 @@ public class FlowerStore {
 				break;
 
 			case 3:
-				// serch item
+				// serch ChocolateBox
 				System.out.println("Check is there a ChocolateBox? enter Chocolate Box name: ");
 				String serchItem = input.next();
 				if (order.serchChocolateBox(serchItem))
