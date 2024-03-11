@@ -6,7 +6,7 @@ public abstract class Items {
 	public Items() {
 		//this.price=0;
 	}
-
+        // copy Constructors
 	public Items(Items i) {
 		this.price = i.price;
 
