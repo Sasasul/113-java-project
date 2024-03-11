@@ -39,9 +39,9 @@ public class FlowerStore {
 					int numOfFlowers = 0;
 					Items it1 = new Flower(typeOfFlower, numOfFlowers);
 					if (order.addItem(it1))
-						System.out.println("Added flower successfully\n");
+						System.out.println("Added flower successfully");
 					else
-						System.out.println("Sorry, we can't add the flower\n");
+						System.out.println("Sorry, we can't add the flower");
 				} // end if
                                 // if the customer want to add Chocolate Box
 				else if (Character.toUpperCase(typeOrder) == 'C') {
@@ -60,9 +60,9 @@ public class FlowerStore {
 				System.out.println("Enter the item number that you want to remove: 1#Rose, 2#Lily, 3#Blossom or 4#ChocolateBox ");
 				int removeItem = input.nextInt();
 				if (order.removeItem(removeItem))
-					System.out.println("Removed succssfuly.\n");
+					System.out.println("Removed succssfuly.");
 				else
-					System.out.println("Sorry, we can't remove it.\n");
+					System.out.println("Sorry, we can't remove it.");
 				break;
 
 			case 3:
