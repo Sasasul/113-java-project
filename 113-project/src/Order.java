@@ -18,23 +18,38 @@ public class Order {
 
 	// Methods
 	public boolean addItem(Items i) {
+		boolean itemAdded = false;
+		boolean thereIsChocoBox=false;
 		if (numOfItems < itemList.length) {
 			if (i instanceof ChocolateBox) {
-				itemList[numOfItems++] = new ChocolateBox((ChocolateBox) i);
-			} else if ((i instanceof Flower)) {
-				System.out.println("how many Flowers do want from this type? ");// asking user for the numOfFlower he
-																				// want
-																				// to add
-				int numperOfFlowes = input.nextInt();
-				itemList[numOfItems++] = new Flower(((Flower) i).type, numperOfFlowes);
-			} // }
-			return true;
+				for (int j = 0; j < numOfItems; j++) {
+					if (itemList[j] instanceof ChocolateBox) {//chacking if there is a ChocolateBox or not befour adding .
+						System.out.print("there is allrady a ChocolateBox");
+						thereIsChocoBox = true;
+					}
+				}
+				if (!thereIsChocoBox) {
+					itemList[numOfItems++] = new ChocolateBox((ChocolateBox) i);
+					System.out.print("it is working!!");
+					itemAdded = true;
+				}
+
+			}
+		 else if ((i instanceof Flower)) {
+			System.out.println("how many Flowers do want from this type? ");// asking user for the numOfFlower he
+																			// want
+																			// to add
+			int numperOfFlowes = input.nextInt();
+			itemList[numOfItems++] = new Flower(((Flower) i).type, numperOfFlowes);
+			itemAdded = true;
+		} // 
+
 		} // end if
-		else
-			return false;
+
+	return itemAdded;
+
 	}
 
-	// remove item from itemList
 	public boolean removeItem(int numOfitem) {
 		boolean ItemRemoved = false;
 
@@ -56,10 +71,10 @@ public class Order {
 		} // else if
 			// if
 		return ItemRemoved;
+
 	}
 
-    //serch method
-	public boolean serchChocolateBox(String s) {
+	public boolean searchChocolateBox(String s) {
 		boolean IsThereChoclateBox = false;
 		for (int i = 0; i < numOfItems; i++) {
 			if (itemList[i] instanceof ChocolateBox)
@@ -68,7 +83,6 @@ public class Order {
 		return IsThereChoclateBox;
 	}
 
-	//calculate Items price(Flower or Chocolate)
 	public double calculateTotalprice() {
 		double TotalPrice = 0;
 		for (int i = 0; i < numOfItems; i++) {
