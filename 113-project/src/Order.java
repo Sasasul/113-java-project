@@ -34,6 +34,7 @@ public class Order {
 			return false;
 	}
 
+	// remove item from itemList
 	public boolean removeItem(int numOfitem) {
 		boolean ItemRemoved = false;
 
@@ -55,9 +56,9 @@ public class Order {
 		} // else if
 			// if
 		return ItemRemoved;
-
 	}
 
+    //serch method
 	public boolean serchChocolateBox(String s) {
 		boolean IsThereChoclateBox = false;
 		for (int i = 0; i < numOfItems; i++) {
@@ -67,6 +68,7 @@ public class Order {
 		return IsThereChoclateBox;
 	}
 
+	//calculate Items price(Flower or Chocolate)
 	public double calculateTotalprice() {
 		double TotalPrice = 0;
 		for (int i = 0; i < numOfItems; i++) {
