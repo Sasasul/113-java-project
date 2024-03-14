@@ -1,7 +1,7 @@
 public class ChocolateBox extends Items {
 
-	private char size;
-	private int chocolateStock = 50;
+	private char size; // the size of chocolateBox is S small, M medium, L large. 
+	private int chocolateStock = 50; // represent the stock of chocolate
 
 	// Constructor
 	public ChocolateBox(char size) {
