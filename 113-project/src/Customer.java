@@ -9,6 +9,7 @@ public class Customer {
 		this.id = id;
 	}
 
+	
 	// methods
 	public String toString() {
 		return "Customer Name: " + name + " Customer ID: " + id + "\n";
