@@ -1,7 +1,109 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Scanner;
 
-public class FlowerStore {
+import javax.swing.*;
+
+public class FlowerStore extends JFrame {
+	final private Font mainFont = new Font("Segoe UI Emoji", Font.BOLD,18); //vairble for name font
+	JTextField tfFirstName, tfId; //text field
+	JLabel lbwelcome;
+
+
+	public void initialize() {
+
+		//____________________form panel______________________
+
+	 	JLabel lbFirstName = new JLabel("✿name ");
+		lbFirstName.setFont(mainFont);
+
+		tfFirstName=new JTextField();
+		tfFirstName.setFont(mainFont);
+
+		JLabel lbId = new JLabel("✿ID"); 
+		lbId.setFont(mainFont);
+
+		tfId=new JTextField();
+		tfId.setFont(mainFont);	
+
+
+		JPanel formPenel = new JPanel();
+		formPenel.setLayout(new GridLayout(4,1,5,5));
+		formPenel.setOpaque(false);
+		formPenel.add(lbFirstName);
+		formPenel.add(tfFirstName);
+		formPenel.add(lbId);
+		formPenel.add(tfId);
+
+		//____________________welcome label______________________
+
+		lbwelcome = new JLabel();
+		lbwelcome.setFont(mainFont);
+		lbwelcome.setHorizontalAlignment(SwingConstants.CENTER); // Align text horizontally to the center
+
+		//____________________bottom______________________
+		
+		JButton btnNext = new JButton("Next");
+		btnNext.setFont(mainFont);
+		btnNext.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				String name = tfFirstName.getText();
+				lbwelcome.setText("❀✿ welcome "+ name + " ✿❀");
+
+				throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+			}
+			
+		});
+
+
+		JButton btnClear = new JButton("Clear");
+		btnClear.setFont(mainFont);
+		btnClear.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				tfFirstName.setText("");
+				tfId.setText("");
+				lbwelcome.setText("");
+
+				throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+			}	
+		});
+
+		JPanel buttonsPanel=new JPanel();
+		buttonsPanel.setLayout(new GridLayout(1,2,5,5));
+		buttonsPanel.setOpaque(false);
+		buttonsPanel.add(btnClear);
+		buttonsPanel.add(btnNext);
+		
+		JPanel maiPanel = new JPanel();
+		maiPanel.setLayout(new BorderLayout());
+		maiPanel.setBackground(new Color(255,214,214));
+		maiPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		maiPanel.add(formPenel, BorderLayout.NORTH);
+		maiPanel.add(lbwelcome, BorderLayout.CENTER);
+		maiPanel.add(buttonsPanel, BorderLayout.SOUTH);
+
+		add(maiPanel);  //add mainPanel to JFrame
+
+		setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
+		setSize(400,300);
+		setMinimumSize(new Dimension(300,400));
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); 
+		setVisible(true);
+	}
+
 	public static void main(String[] args) {
+
+
+		FlowerStore myFrame = new FlowerStore();
+		myFrame.initialize();
+
 
 		Scanner input = new Scanner(System.in);
 		System.out.println("_______Flower Store_______");
