@@ -1,31 +1,36 @@
-public abstract class Items {
+import java.io.*;
+public abstract class Items implements Serializable  { 
+ protected double price; 
 
-	protected double price;
+ // Constructors 
+ public Items() { 
+ //this.price=0; 
 
-	// Constructors
-	public Items() {
-		//this.price=0;
-	}
-        // copy Constructors
-	public Items(Items i) {
-		this.price = i.price;
+ } 
+ public Items(Items i) { 
+ this.price = i.price; 
 
-	}
 
-	// methods
-	public abstract double caculatePrice(); // abstract method
+ } 
+ // methods 
 
-	public String toString() {
-		return "price is: " + price;
-	}
+ public abstract double caculatePrice(); // abstract method 
+ public String toString() { 
 
-	// setters and getters
-	public double getPrice() {
-		return price;
-	}
+ return "price is: " + price; 
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+ } 
+// setters and getters 
 
-}
+ public double getPrice() { 
+
+ return price; 
+
+ } 
+ public void setPrice(double price) { 
+
+ this.price = price; 
+ } 
+} 
+
+ 
