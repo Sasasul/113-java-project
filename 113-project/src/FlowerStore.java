@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
+import java.io.*;
 
 import javax.swing.*;
 
@@ -188,6 +189,7 @@ public class FlowerStore extends JFrame {
 			case 5:
 				// Disply all order information
 				System.out.println(order);
+				order.Save("test.ser");
 				break;
 
 			default:
