@@ -101,7 +101,7 @@ public class FlowerStore extends JFrame {
 		setVisible(true);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws choiceNumberException {
 
 
 		FlowerStore InputFrame = new FlowerStore();
@@ -112,7 +112,7 @@ public class FlowerStore extends JFrame {
 		Scanner input = new Scanner(System.in);
 		System.out.println("_______Flower Store_______");
 		System.out.println("Welcome to our Flower Store, enter your name and id: ");
-		String name = input.next();
+		String name = input.next(); //ذا صار مكرر عادي؟
 		String ID = input.next();
 
 		Customer customer01 = new Customer(name, ID);
@@ -139,11 +139,25 @@ public class FlowerStore extends JFrame {
 				char typeOrder = input.next().charAt(0);
 
 				if (Character.toUpperCase(typeOrder) == 'F') {
-					System.out.println(
-							"Enter the type each number represents a flower type #1 Rose, 2# Lily, 3# Blossom: ");
-					int typeOfFlower = input.nextInt();
+
+					int typeOfFlower;
 					int numOfFlowers = 0;
-					Items it1 = new Flower(typeOfFlower, numOfFlowers);
+					Items it1;
+
+					boolean repeat=true;
+					while(repeat){
+					try{
+						System.out.println("Enter the type each number represents a flower type #1 Rose, 2# Lily, 3# Blossom: ");
+						typeOfFlower = input.nextInt();
+						checkInputNumber(typeOfFlower);
+						it1 = new Flower(typeOfFlower, numOfFlowers);
+
+						repeat=false;	
+					}catch(choiceNumberException e){
+							System.out.println("try again");
+						}	
+					}
+
 					if (order.addItem(it1))
 						System.out.println("Added flower successfully\n");
 					else
@@ -211,6 +225,15 @@ public class FlowerStore extends JFrame {
 		while (costumerchoise != 6 && chooseAnotherOption.equalsIgnoreCase("yes"));
 
 	} // end main
+
+	private static void checkInputNumber(int typeOfFlower) {
+
+		if ( typeOfFlower == 1 || typeOfFlower == 2 || typeOfFlower == 3 )
+		return;
+
+		throw new choiceNumberException("you can enter that, choice 1 or 2 or 3: ");
+	}
+
 	public  void initializeOutput(Order order) {
 		//___________Labels___________
 		JLabel thxlabel=new JLabel();
