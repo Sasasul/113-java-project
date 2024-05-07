@@ -12,7 +12,7 @@ public class Customer {
 	
 	// methods
 	public String toString() {
-		return "Customer Name: " + name + " Customer ID: " + id + "\n";
+		return "-----------------------------------\nName: " + name + "        ID: " + id + "\n\n";
 	}
 
 	// setters and getters
