@@ -109,8 +109,8 @@ public class Order implements Serializable {
 			JOptionPane.showMessageDialog(this, "Successfully Saved");
 			// checked exception
 		} catch (IOException ef) {
-			JOptionPane.showMessageDialog(this, + ef.toString());
-			
+			JOptionPane.showMessageDialog(this, ef.toString());
+
 		}
 
 	}
@@ -132,27 +132,27 @@ public class Order implements Serializable {
 				this.addItem(obj);
 			}
 			ji.close();
-			JOptionPane.showMessageDialog(this, + "Successfully Loaded!");
+			JOptionPane.showMessageDialog(this, +"Successfully Loaded!");
 
 		}
 		// checked exception
 		catch (EOFException e) {
-			JOptionPane.showMessageDialog(this, + e.toString());
+			JOptionPane.showMessageDialog(this, +e.toString());
 		}
 
 		// uncheack exception
 		catch (ClassNotFoundException ef) {
-			JOptionPane.showMessageDialog(this, + ef.toString());
+			JOptionPane.showMessageDialog(this, +ef.toString());
 		}
 		// checked exception
 		catch (IOException ef) {
-			JOptionPane.showMessageDialog(this, + ef.toString());
+			JOptionPane.showMessageDialog(this, +ef.toString());
 		}
 
 	}
 
 	public String toString() {
-		String info = "Order Number: " + numOfOrder + "\n" + "_____Customer info_____ \n" + customer;
+		String info = "Order Number: " + numOfOrder + "\n\n" + "_________Customer info_________ \n\n" + customer;
 		for (int i = 0; i < numOfItems; i++) {
 			info += itemList[i].toString();
 
