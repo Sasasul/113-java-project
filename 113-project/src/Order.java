@@ -109,7 +109,8 @@ public class Order implements Serializable {
 			JOptionPane.showMessageDialog(this, "Successfully Saved");
 			// checked exception
 		} catch (IOException ef) {
-			JOptionPane.showMessageDialog(this, ef.toString());
+			 System.out.println("IOE error"+ ef.toString());
+
 
 		}
 
@@ -132,21 +133,24 @@ public class Order implements Serializable {
 				this.addItem(obj);
 			}
 			ji.close();
-			JOptionPane.showMessageDialog(this, +"Successfully Loaded!");
+			
 
 		}
 		// checked exception
 		catch (EOFException e) {
-			JOptionPane.showMessageDialog(this, +e.toString());
+			System.out.println("End of file reached"+ e.toString());
+
 		}
 
 		// uncheack exception
 		catch (ClassNotFoundException ef) {
-			JOptionPane.showMessageDialog(this, +ef.toString());
+			System.out.println("CNF error"+ ef.toString());
+
 		}
 		// checked exception
 		catch (IOException ef) {
-			JOptionPane.showMessageDialog(this, +ef.toString());
+			System.out.println("IOE error"+ ef.toString());
+
 		}
 
 	}
