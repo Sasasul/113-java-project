@@ -12,7 +12,7 @@ public class FlowerStore extends JFrame {
 	JLabel lbwelcome;
 
 
-	public void initialize() {
+	public void initializeinput() {
 
 		//____________________form panel______________________
 
@@ -82,17 +82,19 @@ public class FlowerStore extends JFrame {
 		buttonsPanel.add(btnClear);
 		buttonsPanel.add(btnNext);
 		
-		JPanel maiPanel = new JPanel();
-		maiPanel.setLayout(new BorderLayout());
-		maiPanel.setBackground(new Color(255,214,214));
-		maiPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-		maiPanel.add(formPenel, BorderLayout.NORTH);
-		maiPanel.add(lbwelcome, BorderLayout.CENTER);
-		maiPanel.add(buttonsPanel, BorderLayout.SOUTH);
+		JPanel mainPanel = new JPanel();
+		mainPanel.setLayout(new BorderLayout());
+		mainPanel.setBackground(new Color(255,214,214));
+		mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		mainPanel.add(formPenel, BorderLayout.NORTH);
+		mainPanel.add(lbwelcome, BorderLayout.CENTER);
+		mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
 
-		add(maiPanel);  //add mainPanel to JFrame
-
+		add(mainPanel);  //add mainPanel to JFrame
+		
+		ImageIcon flowerIcon=new ImageIcon("\"C:\\Users\\otaib\\Downloads\\FlowerImage.png\"");
 		setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
+		setIconImage(flowerIcon.getImage());
 		setSize(400,300);
 		setMinimumSize(new Dimension(300,400));
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); 
@@ -102,8 +104,9 @@ public class FlowerStore extends JFrame {
 	public static void main(String[] args) {
 
 
-		FlowerStore myFrame = new FlowerStore();
-		myFrame.initialize();
+		FlowerStore InputFrame = new FlowerStore();
+		InputFrame.initializeinput();
+		InputFrame.getDefaultCloseOperation();// سارة تجرب
 
 
 		Scanner input = new Scanner(System.in);
@@ -123,7 +126,7 @@ public class FlowerStore extends JFrame {
 			System.out.println("2-Remove Item");
 			System.out.println("3-is There a ChoclateBox ?");
 			System.out.println("4-Calculate Total price ");
-			System.out.println("5-Disply all order information:");
+			System.out.println("5-Disply receipt:");
 			System.out.println("6-Exite");
 			System.out.println("your choice is:");
 			costumerchoise = input.nextInt();
@@ -171,7 +174,7 @@ public class FlowerStore extends JFrame {
 
 			case 3:
 				// search item
-				System.out.println("Check is there a ChocolateBox ");
+				System.out.println("Checking for a ChocolateBox.....");
 				 String searchItem ="ChocolateBox";
 				if (order.searchChocolateBox(searchItem))
 					System.out.println("Yes, there is a Chocolate Box.\n");
@@ -188,8 +191,11 @@ public class FlowerStore extends JFrame {
 
 			case 5:
 				// Disply all order information
-				System.out.println(order);
-				order.Save("test.ser");
+				//ممكن هنا انادي الميثود اللي تسوي الفريم
+				FlowerStore OutputFrame = new FlowerStore();
+				OutputFrame.initializeOutput(order);
+				//System.out.println(order);
+				order.Save("test.text");
 				break;
 
 			default:
@@ -205,4 +211,46 @@ public class FlowerStore extends JFrame {
 		while (costumerchoise != 6 && chooseAnotherOption.equalsIgnoreCase("yes"));
 
 	} // end main
+	public  void initializeOutput(Order order) {
+		//___________Labels___________
+		JLabel thxlabel=new JLabel();
+		thxlabel.setText("❀ Thanks for shopping ❀");
+		thxlabel.setFont(mainFont);
+		thxlabel.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		//JLabel receiptLabel=new JLabel();
+		JTextArea receiptText = new JTextArea();
+		receiptText.setText(order.toString());
+		receiptText.setFont(mainFont);
+		//receiptText.setSize(9,5);
+		//receiptText.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JLabel SULabel=new JLabel();
+		SULabel.setText("See you soon <3");
+		SULabel.setFont(mainFont);
+		SULabel.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		
+		JPanel mainPanel = new JPanel();
+		mainPanel.setLayout(new BorderLayout());
+		mainPanel.setBackground(new Color(255,214,214));
+		mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		mainPanel.add(thxlabel, BorderLayout.NORTH);
+		mainPanel.add(receiptText, BorderLayout.CENTER);
+		mainPanel.add(SULabel, BorderLayout.SOUTH);
+		
+		//____________Frame__________
+		ImageIcon flowerIcon=new ImageIcon("\"C:\\Users\\otaib\\Downloads\\FlowerImage.png\"");
+		JFrame OutputFrame=new JFrame();		
+		OutputFrame.setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
+		OutputFrame.setIconImage(flowerIcon.getImage());//ما ضبط 
+		OutputFrame.setSize(400,300);
+		OutputFrame.setMinimumSize(new Dimension(300,400));
+		OutputFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); 
+		OutputFrame.setVisible(true);
+		OutputFrame.add(mainPanel);  //add mainPanel to JFrame
+		OutputFrame.pack();
+	}
+		
+	
 } // end class
