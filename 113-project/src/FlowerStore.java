@@ -48,16 +48,12 @@ public class FlowerStore extends JFrame {
 		JButton btnNext = new JButton("Next");
 		btnNext.setFont(mainFont);
 		btnNext.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				String name = tfFirstName.getText();
 				lbwelcome.setText("❀✿ welcome "+ name + " ✿❀");
-
 				throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
 			}
-			
 		});
 
 
@@ -67,7 +63,6 @@ public class FlowerStore extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				tfFirstName.setText("");
 				tfId.setText("");
 				lbwelcome.setText("");
@@ -151,20 +146,20 @@ public class FlowerStore extends JFrame {
 						typeOfFlower = input.nextInt();
 						checkInputNumber(typeOfFlower);
 						it1 = new Flower(typeOfFlower, numOfFlowers);
-
+						
+					    if (order.addItem(it1))
+						System.out.println("Added flower successfully\n");
+						else
+						System.out.println("Sorry, we can't add the flower\n");
 						repeat=false;	
 					}catch(choiceNumberException e){
 							System.out.println("try again");
 						}	
 					}
-
-					if (order.addItem(it1))
-						System.out.println("Added flower successfully\n");
-					else
-						System.out.println("Sorry, we can't add the flower\n");
 				} // end if
 
 				else if (Character.toUpperCase(typeOrder) == 'C') {
+
 					System.out.println("Enter size (L)or(M)or(S):");
 					char sizeOfChocolate = input.next().charAt(0);
 					Items it2 = new ChocolateBox(sizeOfChocolate);
