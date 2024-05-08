@@ -1,3 +1,6 @@
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 public class Customer {
 
 	private String name;
@@ -10,7 +13,12 @@ public class Customer {
 	}
 
 	
-	// methods
+	public Customer(JTextField tfFirstName, JLabel lbId) {
+        //TODO Auto-generated constructor stub
+    }
+
+
+    // methods
 	public String toString() {
 		return "-----------------------------------\nName: " + name + "        ID: " + id + "\n\n";
 	}

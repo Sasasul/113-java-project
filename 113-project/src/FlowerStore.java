@@ -3,14 +3,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
 import java.io.*;
-
 import javax.swing.*;
+
+
+
+
 
 public class FlowerStore extends JFrame {
 	final private Font mainFont = new Font("Segoe UI Emoji", Font.BOLD,18); //vairble for name font
 	JTextField tfFirstName, tfId; //text field
 	JLabel lbwelcome;
-
+	static Order order;
 
 	public void initializeinput() {
 
@@ -24,6 +27,9 @@ public class FlowerStore extends JFrame {
 
 		JLabel lbId = new JLabel("✿ID"); 
 		lbId.setFont(mainFont);
+
+		Customer customer01 = new Customer(tfFirstName,lbId);
+		order = new Order(customer01);
 
 		tfId=new JTextField();
 		tfId.setFont(mainFont);	
@@ -52,7 +58,7 @@ public class FlowerStore extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String name = tfFirstName.getText();
 				lbwelcome.setText("❀✿ welcome "+ name + " ✿❀");
-				throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+				//throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
 			}
 		});
 
@@ -105,14 +111,6 @@ public class FlowerStore extends JFrame {
 
 
 		Scanner input = new Scanner(System.in);
-		System.out.println("_______Flower Store_______");
-		System.out.println("Welcome to our Flower Store, enter your name and id: ");
-		String name = input.next(); //ذا صار مكرر عادي؟
-		String ID = input.next();
-
-		Customer customer01 = new Customer(name, ID);
-		Order order = new Order(customer01);
-
 		int costumerchoise;
 		String chooseAnotherOption;
 		do {
@@ -200,7 +198,6 @@ public class FlowerStore extends JFrame {
 
 			case 5:
 				// Disply all order information
-				//ممكن هنا انادي الميثود اللي تسوي الفريم
 				FlowerStore OutputFrame = new FlowerStore();
 				OutputFrame.initializeOutput(order);
 				//System.out.println(order);
@@ -268,7 +265,5 @@ public class FlowerStore extends JFrame {
 		OutputFrame.setVisible(true);
 		OutputFrame.add(mainPanel);  //add mainPanel to JFrame
 		OutputFrame.pack();
-	}
-		
-	
+	}		
 } // end class
