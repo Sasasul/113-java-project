@@ -1,7 +1,5 @@
 import java.util.Scanner;
 import java.io.*;
-import javax.swing.JOptionPane;
-
 public class Order implements Serializable {
 	static Scanner input = new Scanner(System.in);
 	private int numOfOrder;
@@ -11,7 +9,7 @@ public class Order implements Serializable {
 
 	// Constructor
 	public Order(Customer customer) {
-		this.customer = new Customer(customer.getName(), customer.getId());
+		//this.customer = new Customer(customer.getName(), customer.getId());
 		itemList = new Items[10];
 		numOfItems = 0;
 		numOfOrder++;
@@ -106,7 +104,7 @@ public class Order implements Serializable {
 				fileOut.println(itemList[i]);
 
 			fileOut.close();
-			JOptionPane.showMessageDialog(this, "Successfully Saved");
+			//JOptionPane.showMessageDialog(this, "Successfully Saved");
 			// checked exception
 		} catch (IOException ef) {
 			 System.out.println("IOE error"+ ef.toString());
@@ -125,8 +123,8 @@ public class Order implements Serializable {
 			ObjectInputStream ji = new ObjectInputStream(fis);
 
 			int size = ji.readInt();
-			String name = (String) ji.readObject();
-			customer.setName(name);
+			//JTextField name = (JTextField) ji.readObject();
+			//customer.setName(name);
 
 			for (int i = 0; i < size; i++) {
 				Items obj = (Items) ji.readObject();
@@ -156,7 +154,7 @@ public class Order implements Serializable {
 	}
 
 	public String toString() {
-		String info = "Order Number: " + numOfOrder + "\n\n" + "_________Customer info_________ \n\n" + customer;
+		String info = "Order Number: " + numOfOrder + "\n\n";  //+ "_________Customer info_________ \n\n" + customer;
 		for (int i = 0; i < numOfItems; i++) {
 			info += itemList[i].toString();
 

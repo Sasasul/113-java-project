@@ -2,7 +2,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
-import java.io.*;
 import javax.swing.*;
 
 
@@ -11,7 +10,7 @@ import javax.swing.*;
 
 public class FlowerStore extends JFrame {
 	final private Font mainFont = new Font("Segoe UI Emoji", Font.BOLD,18); //vairble for name font
-	JTextField tfFirstName, tfId; //text field
+	static JTextField tfFirstName, tfId; //text field
 	JLabel lbwelcome;
 	static Order order;
 
@@ -24,11 +23,13 @@ public class FlowerStore extends JFrame {
 
 		tfFirstName=new JTextField();
 		tfFirstName.setFont(mainFont);
-
+		tfFirstName.setEditable(true);
 		JLabel lbId = new JLabel("✿ID"); 
 		lbId.setFont(mainFont);
+		
 
-		Customer customer01 = new Customer(tfFirstName,lbId);
+
+		Customer customer01= new Customer();
 		order = new Order(customer01);
 
 		tfId=new JTextField();
@@ -197,10 +198,9 @@ public class FlowerStore extends JFrame {
 				break;
 
 			case 5:
-				// Disply all order information
+				// Display receipt
 				FlowerStore OutputFrame = new FlowerStore();
-				OutputFrame.initializeOutput(order);
-				//System.out.println(order);
+				OutputFrame.initializeOutput(order, tfFirstName.getText(), tfId.getText());
 				order.Save("test.text");
 				break;
 
@@ -226,8 +226,14 @@ public class FlowerStore extends JFrame {
 		throw new choiceNumberException("you can enter that, choice 1 or 2 or 3: ");
 	}
 
-	public  void initializeOutput(Order order) {
+ 	public  void initializeOutput(Order order, String name, String id) {
 		//___________Labels___________
+
+		 // Labels for name and ID
+		 JLabel nameLabel = new JLabel("Name: " + name);
+		 JLabel idLabel = new JLabel("ID: " + id);
+
+
 		JLabel thxlabel=new JLabel();
 		thxlabel.setText("❀ Thanks for shopping ❀");
 		thxlabel.setFont(mainFont);
@@ -253,6 +259,10 @@ public class FlowerStore extends JFrame {
 		mainPanel.add(thxlabel, BorderLayout.NORTH);
 		mainPanel.add(receiptText, BorderLayout.CENTER);
 		mainPanel.add(SULabel, BorderLayout.SOUTH);
+		// Add name and ID labels to the mainPanel
+		mainPanel.add(nameLabel, BorderLayout.WEST);
+		mainPanel.add(idLabel, BorderLayout.EAST);
+
 		
 		//____________Frame__________
 		ImageIcon flowerIcon=new ImageIcon("\"C:\\Users\\otaib\\Downloads\\FlowerImage.png\"");
@@ -265,5 +275,5 @@ public class FlowerStore extends JFrame {
 		OutputFrame.setVisible(true);
 		OutputFrame.add(mainPanel);  //add mainPanel to JFrame
 		OutputFrame.pack();
-	}		
+	}	
 } // end class
