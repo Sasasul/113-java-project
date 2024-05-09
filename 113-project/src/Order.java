@@ -106,7 +106,7 @@ public class Order implements Serializable {
 				fileOut.println(itemList[i]);
 
 			fileOut.close();
-			JOptionPane.showMessageDialog(this, "Successfully Saved");
+			JOptionPane.showMessageDialog(null, "Successfully Saved");
 			// checked exception
 		} catch (IOException ef) {
 			 System.out.println("IOE error"+ ef.toString());
