@@ -201,7 +201,8 @@ public class FlowerStore extends JFrame {
 				FlowerStore OutputFrame = new FlowerStore();
 				OutputFrame.initializeOutput(order);
 				//System.out.println(order);
-				order.Save("test.text");
+				order.Save("test.text"); // هذي مكانها مو عاجبني بس مادري وين احطها
+				order.load("test.text")
 				break;
 
 			default:
