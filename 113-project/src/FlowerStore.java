@@ -71,6 +71,7 @@ public class FlowerStore extends JFrame {
 		buttonsPanel.add(btnClear);
 		buttonsPanel.add(btnNext);
 		
+
 		JPanel mainPanel = new JPanel();
 		mainPanel.setLayout(new BorderLayout());
 		mainPanel.setBackground(new Color(255,214,214));
@@ -80,10 +81,11 @@ public class FlowerStore extends JFrame {
 		mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
 
 		add(mainPanel);  //add mainPanel to JFrame
-		
-		ImageIcon flowerIcon=new ImageIcon("\"C:\\Users\\otaib\\Downloads\\FlowerImage.png\"");
+
+		ImageIcon imageIcon = new ImageIcon("113-java-project\\113-project\\src\\vecteezy_hand-drawn-colored-star-banner_22183251.png");
+		setIconImage(imageIcon.getImage());
+
 		setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
-		setIconImage(flowerIcon.getImage());
 		setSize(400,300);
 		setMinimumSize(new Dimension(300,400));
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); 
