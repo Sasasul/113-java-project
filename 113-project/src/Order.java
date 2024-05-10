@@ -11,7 +11,7 @@ public class Order implements Serializable {
 
 	// Constructor
 	public Order(Customer customer) {
-		this.customer = new Customer(customer.getName(), customer.getId());
+		//this.customer = new Customer(customer.getName(), customer.getId());
 		itemList = new Items[10];
 		numOfItems = 0;
 		numOfOrder++;
@@ -88,9 +88,7 @@ public class Order implements Serializable {
 			if (itemList[i] != null)
 				TotalPrice += itemList[i].caculatePrice();
 		}
-
 		return TotalPrice;
-
 	}
 
 	// File method to Write
@@ -110,17 +108,13 @@ public class Order implements Serializable {
 			// checked exception
 		} catch (IOException ef) {
 			 System.out.println("IOE error"+ ef.toString());
-
-
 		}
-
 	}
 
 // file method to read 
 	public void load(String fileName) {
 
 		try {
-
 			FileInputStream fis = new FileInputStream(fileName);
 			ObjectInputStream ji = new ObjectInputStream(fis);
 
@@ -132,8 +126,7 @@ public class Order implements Serializable {
 				Items obj = (Items) ji.readObject();
 				this.addItem(obj);
 			}
-			ji.close();
-			
+			ji.close();	
 
 		}
 		// checked exception
@@ -150,16 +143,13 @@ public class Order implements Serializable {
 		// checked exception
 		catch (IOException ef) {
 			System.out.println("IOE error"+ ef.toString());
-
 		}
-
 	}
 
 	public String toString() {
-		String info = "Order Number: " + numOfOrder + "\n\n" + "_________Customer info_________ \n\n" + customer;
+		String info = "Order Number: " + numOfOrder + "\n\n";// + "_________Customer info_________ \n\n" + customer;
 		for (int i = 0; i < numOfItems; i++) {
 			info += itemList[i].toString();
-
 		}
 		return info;
 	}

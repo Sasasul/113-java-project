@@ -2,23 +2,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
-import java.io.*;
 import javax.swing.*;
-
-
-
-
-
 public class FlowerStore extends JFrame {
-	final private Font mainFont = new Font("Segoe UI Emoji", Font.BOLD,18); //vairble for name font
-	JTextField tfFirstName, tfId; //text field
+
+	final private Font mainFont = new Font("Segoe UI Emoji", Font.BOLD,18); //vairble for font
+	static JTextField tfFirstName, tfId; //text field
 	JLabel lbwelcome;
 	static Order order;
 
 	public void initializeinput() {
-
-		//____________________form panel______________________
-
+		//form panel
 	 	JLabel lbFirstName = new JLabel("✿name ");
 		lbFirstName.setFont(mainFont);
 
@@ -27,9 +20,6 @@ public class FlowerStore extends JFrame {
 
 		JLabel lbId = new JLabel("✿ID"); 
 		lbId.setFont(mainFont);
-
-		Customer customer01 = new Customer(tfFirstName,lbId);
-		order = new Order(customer01);
 
 		tfId=new JTextField();
 		tfId.setFont(mainFont);	
@@ -43,14 +33,12 @@ public class FlowerStore extends JFrame {
 		formPenel.add(lbId);
 		formPenel.add(tfId);
 
-		//____________________welcome label______________________
-
+		//welcome label
 		lbwelcome = new JLabel();
 		lbwelcome.setFont(mainFont);
-		lbwelcome.setHorizontalAlignment(SwingConstants.CENTER); // Align text horizontally to the center
+		lbwelcome.setHorizontalAlignment(SwingConstants.CENTER); 
 
-		//____________________bottom______________________
-		
+		//bottom
 		JButton btnNext = new JButton("Next");
 		btnNext.setFont(mainFont);
 		btnNext.addActionListener(new ActionListener() {
@@ -58,10 +46,11 @@ public class FlowerStore extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String name = tfFirstName.getText();
 				lbwelcome.setText("❀✿ welcome "+ name + " ✿❀");
-				//throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
 			}
 		});
 
+		Customer customer01 = new Customer();
+		order = new Order(customer01);
 
 		JButton btnClear = new JButton("Clear");
 		btnClear.setFont(mainFont);
@@ -72,7 +61,6 @@ public class FlowerStore extends JFrame {
 				tfFirstName.setText("");
 				tfId.setText("");
 				lbwelcome.setText("");
-
 				throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
 			}	
 		});
@@ -104,15 +92,14 @@ public class FlowerStore extends JFrame {
 
 	public static void main(String[] args) throws choiceNumberException {
 
-
 		FlowerStore InputFrame = new FlowerStore();
 		InputFrame.initializeinput();
 		InputFrame.getDefaultCloseOperation();// سارة تجرب
 
-
 		Scanner input = new Scanner(System.in);
 		int costumerchoise;
 		String chooseAnotherOption;
+
 		do {
 			System.out.println("\nEnter your menu option:");
 			System.out.println("1-Add Item");
@@ -125,7 +112,6 @@ public class FlowerStore extends JFrame {
 			costumerchoise = input.nextInt();
 
 			switch (costumerchoise) {
-
 			case 1:
 				// Add item
 				System.out.println("Do you want to add Flowers 'F' or ChocolateBox 'C': ");
@@ -197,14 +183,11 @@ public class FlowerStore extends JFrame {
 				break;
 
 			case 5:
-				// Disply all order information
-				FlowerStore OutputFrame = new FlowerStore();
-				OutputFrame.initializeOutput(order);
-				//System.out.println(order);
-				order.Save("test.text"); // هذي مكانها مو عاجبني بس مادري وين احطها
-				order.load("test.text");
-				break;
-
+				 // Display receipt
+				 FlowerStore OutputFrame = new FlowerStore();
+				 OutputFrame.initializeOutput(order, tfFirstName.getText(), tfId.getText());
+				 order.Save("test.text");
+				 break;
 			default:
 				System.out.println("## invaild input ##\n");
 
@@ -227,25 +210,28 @@ public class FlowerStore extends JFrame {
 		throw new choiceNumberException("you can enter that, choice 1 or 2 or 3: ");
 	}
 
-	public  void initializeOutput(Order order) {
-		//___________Labels___________
+	public  void initializeOutput(Order order, String name, String id) {
+		//Labels
 		JLabel thxlabel=new JLabel();
 		thxlabel.setText("❀ Thanks for shopping ❀");
 		thxlabel.setFont(mainFont);
 		thxlabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+		// Labels for name and ID
+		JLabel nameLabel = new JLabel("Name: " + name);
+		JLabel idLabel = new JLabel("ID: " + id);
+
+		nameLabel.setFont(mainFont);
+		idLabel.setFont(mainFont);
 		
-		//JLabel receiptLabel=new JLabel();
 		JTextArea receiptText = new JTextArea();
 		receiptText.setText(order.toString());
 		receiptText.setFont(mainFont);
-		//receiptText.setSize(9,5);
-		//receiptText.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JLabel SULabel=new JLabel();
 		SULabel.setText("See you soon <3");
 		SULabel.setFont(mainFont);
 		SULabel.setHorizontalAlignment(SwingConstants.CENTER);
-		
 		
 		JPanel mainPanel = new JPanel();
 		mainPanel.setLayout(new BorderLayout());
@@ -254,17 +240,17 @@ public class FlowerStore extends JFrame {
 		mainPanel.add(thxlabel, BorderLayout.NORTH);
 		mainPanel.add(receiptText, BorderLayout.CENTER);
 		mainPanel.add(SULabel, BorderLayout.SOUTH);
+		mainPanel.add(nameLabel, BorderLayout.CENTER);
+		mainPanel.add(idLabel, BorderLayout.CENTER);
 		
-		//____________Frame__________
-		ImageIcon flowerIcon=new ImageIcon("\"C:\\Users\\otaib\\Downloads\\FlowerImage.png\"");
+		//Frame
 		JFrame OutputFrame=new JFrame();		
 		OutputFrame.setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
-		OutputFrame.setIconImage(flowerIcon.getImage());//ما ضبط 
 		OutputFrame.setSize(400,300);
 		OutputFrame.setMinimumSize(new Dimension(300,400));
 		OutputFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); 
 		OutputFrame.setVisible(true);
-		OutputFrame.add(mainPanel);  //add mainPanel to JFrame
+		OutputFrame.add(mainPanel);//add mainPanel to JFrame
 		OutputFrame.pack();
 	}		
 } // end class

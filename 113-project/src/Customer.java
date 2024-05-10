@@ -9,13 +9,6 @@ public class Customer {
 		this.id = id;}*/
 	
 
-	// Constructor
-	/*public Customer(JTextField tfFirstName, JLabel lbId) {
-        tfFirstName = name;
-		lbId = id;
-    }*/
-
-
     // methods
 	public String toString() {
 		return "-----------------------------------\nName: " + name + "        ID: " + id + "\n\n";
