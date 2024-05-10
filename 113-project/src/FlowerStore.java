@@ -61,7 +61,6 @@ public class FlowerStore extends JFrame {
 				tfFirstName.setText("");
 				tfId.setText("");
 				lbwelcome.setText("");
-				throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
 			}	
 		});
 
