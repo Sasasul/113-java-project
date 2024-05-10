@@ -138,7 +138,7 @@ public class FlowerStore extends JFrame {
 						System.out.println("Sorry, we can't add the flower\n");
 						repeat=false;	
 					}catch(choiceNumberException e){
-							System.out.println("try again");
+							System.err.println("try again");
 						}	
 					}
 				} // end if
