@@ -187,7 +187,8 @@ public class FlowerStore extends JFrame {
 				 // Display receipt
 				 FlowerStore OutputFrame = new FlowerStore();// Create an instance of FlowerStore
 				 OutputFrame.initializeOutput(order, tfFirstName.getText(), tfId.getText());
-				 //order.Save("test.text"); هذا وش سالفته يسوي اكسبشن
+				 order.Save("test.txt");
+             //order.load("test.text") ;
 				 break;
 			default:
 				System.out.println("## invaild input ##\n");
