@@ -105,7 +105,7 @@ public class FlowerStore extends JFrame {
 			System.out.println("\nEnter your menu option:");
 			System.out.println("1-Add Item");
 			System.out.println("2-Remove Item");
-			System.out.println("3-is There a ChoclateBox ?");
+			System.out.println("3-is There a ChoclateBox?");
 			System.out.println("4-Calculate Total price ");
 			System.out.println("5-Disply receipt");
 			System.out.println("6-upload file order information:");
@@ -192,7 +192,7 @@ public class FlowerStore extends JFrame {
 				 break;
 
 			case 6:
-			order.load("test.text") ;
+			order.load("test.txt") ;
 			break;
 
 			default:

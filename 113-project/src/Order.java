@@ -94,7 +94,7 @@ public class Order implements Serializable {
 	// File method to Write
 	public void Save(String fileName) {
 		try {
-			FileOutputStream fOut = new FileOutputStream(fileName);
+			FileOutputStream fOut = new FileOutputStream(new File(fileName));
 			PrintWriter fileOut = new PrintWriter(fOut);
 
 			fileOut.println(numOfItems);
@@ -113,14 +113,12 @@ public class Order implements Serializable {
 
 // file method to read 
 	public void load(String fileName) {
-
 		try {
 			FileInputStream fis = new FileInputStream(new File(fileName));
 			ObjectInputStream ji = new ObjectInputStream(fis);
-
+			System.out.println("**");
 			int size = ji.readInt();
-			//String name = (String) ji.readObject();
-			//customer.setName(name);
+			System.out.println("*");
 
 			for (int i = 0; i < size; i++) {
 				Items obj = (Items) ji.readObject();
@@ -144,6 +142,7 @@ public class Order implements Serializable {
 		catch (IOException ef) {
 			System.out.println("IOE error"+ ef.toString());
 		}
+
 	}
 
 	public String toString() {

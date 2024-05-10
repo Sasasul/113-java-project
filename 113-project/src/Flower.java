@@ -40,13 +40,13 @@ public class Flower extends Items {
 		switch (type) {
 
 		case 1:
-			return price * numOfFlowers;
+			return price *= numOfFlowers;
 
 		case 2:
-			return price * numOfFlowers;
+			return price *= numOfFlowers;
 
 		case 3:
-			return price * numOfFlowers;
+			return price *= numOfFlowers;
 
 		default:
 			return 0;
