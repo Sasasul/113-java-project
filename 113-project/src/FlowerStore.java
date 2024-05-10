@@ -5,7 +5,7 @@ import java.util.Scanner;
 import javax.swing.*;
 public class FlowerStore extends JFrame {
 
-	final private Font mainFont = new Font("Segoe UI Emoji", Font.BOLD,18); //vairble for font
+	final private Font mainFont = new Font("Segoe UI Emoji", Font.BOLD,16); //vairble for font
 	static JTextField tfFirstName, tfId; //text field
 	JLabel lbwelcome;
 	static Order order;
