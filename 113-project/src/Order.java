@@ -98,7 +98,7 @@ public class Order implements Serializable {
 			PrintWriter fileOut = new PrintWriter(fOut);
 
 			fileOut.println(numOfItems);
-			fileOut.println(customer.getName());
+			//fileOut.println(customer.getName());
 
 			for (int i = 0; i < numOfItems; i++)
 				fileOut.println(itemList[i]);
@@ -120,7 +120,7 @@ public class Order implements Serializable {
 
 			int size = ji.readInt();
 			String name = (String) ji.readObject();
-			customer.setName(name);
+			//customer.setName(name);
 
 			for (int i = 0; i < size; i++) {
 				Items obj = (Items) ji.readObject();
