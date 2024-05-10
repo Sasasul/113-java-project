@@ -254,9 +254,11 @@ public class FlowerStore extends JFrame {
 		mainPanel.setBackground(new Color(255, 214, 214));
 		mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		mainPanel.add(thxlabel, BorderLayout.NORTH);
-		mainPanel.add(SULabel, BorderLayout.SOUTH);
 		mainPanel.add(nameIdPanel, BorderLayout.CENTER);
 		mainPanel.add(Rlabel, BorderLayout.PAGE_END);
+		mainPanel.add(SULabel, BorderLayout.SOUTH); // معد يبان
+		
+
 
 	
 		// Frame
