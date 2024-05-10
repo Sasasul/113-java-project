@@ -7,11 +7,10 @@ public class Order implements Serializable {
 	private int numOfOrder;
 	private Items[] itemList;
 	private int numOfItems;
-	private Customer customer;
+	
 
 	// Constructor
-	public Order(Customer customer) {
-		//this.customer = new Customer(customer.getName(), customer.getId());
+	public Order() {
 		itemList = new Items[10];
 		numOfItems = 0;
 		numOfOrder++;

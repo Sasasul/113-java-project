@@ -51,8 +51,8 @@ public class FlowerStore extends JFrame  {
             }
          });
    
-      Customer customer01 = new Customer();
-      order = new Order(customer01);
+      
+      order = new Order();
    
       JButton btnClear = new JButton("Clear");
       btnClear.setFont(mainFont);
@@ -88,8 +88,8 @@ public class FlowerStore extends JFrame  {
       setIconImage(imageIcon.getImage());
    
       setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
-      setSize(400,300);
-      setMinimumSize(new Dimension(300,400));
+      setSize(280,300);
+      setMinimumSize(new Dimension(30,100));
       setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); 
       setVisible(true);
    }
@@ -98,7 +98,7 @@ public class FlowerStore extends JFrame  {
    
       FlowerStore InputFrame = new FlowerStore();
       InputFrame.initializeinput();
-      InputFrame.getDefaultCloseOperation();// سارة تجرب
+      InputFrame.getDefaultCloseOperation();
    
       Scanner input = new Scanner(System.in);
       int costumerchoise;
@@ -195,11 +195,9 @@ public class FlowerStore extends JFrame  {
                break;
          
             case 6:
-               //try {
-                  order.need();              /* }
-               catch(ClassNotFoundException  e) {
-                  e.printStackTrace();
-               } ;*/
+               
+                  order.need();            
+              
                break;
          
             default:
@@ -235,11 +233,12 @@ public class FlowerStore extends JFrame  {
    	// Labels for name and ID
       JLabel nameLabel = new JLabel("Name: " + (name != null ? name : ""));
       JLabel idLabel = new JLabel("ID: " + (id != null ? id : ""));
-      JLabel Rlabel = new JLabel("<< we've successfully saved your receipt to a file >>");
+      JLabel Rlabel = new JLabel("✓ we've successfully saved your receipt to a file ");
    
       nameLabel.setFont(mainFont);
       idLabel.setFont(mainFont);
       Rlabel.setFont(mainFont);
+	
    
       JTextArea receiptText = new JTextArea();
       receiptText.setText(order.toString());
@@ -271,8 +270,8 @@ public class FlowerStore extends JFrame  {
    	// Frame
       JFrame OutputFrame = new JFrame();
       OutputFrame.setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
-      OutputFrame.setSize(400, 300);
-      OutputFrame.setMinimumSize(new Dimension(300, 400));
+      OutputFrame.setSize(200, 200);
+      OutputFrame.setMinimumSize(new Dimension(200, 200));
       OutputFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
       OutputFrame.setVisible(true);
       OutputFrame.add(mainPanel); // add mainPanel to JFrame
