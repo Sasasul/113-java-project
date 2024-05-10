@@ -92,27 +92,23 @@ public class Order implements Serializable {
 	}
 
 	// File method to Write
-	public void Save(String fileName) {
-		try {
+	public void Save(String fileName)throws IOException  {
+		
 			FileOutputStream fOut = new FileOutputStream(new File(fileName));
 			PrintWriter fileOut = new PrintWriter(fOut);
 
 			fileOut.println(numOfItems);
-			//fileOut.println(customer.getName());
+			
 
 			for (int i = 0; i < numOfItems; i++)
 				fileOut.println(itemList[i]);
 
 			fileOut.close();
 			JOptionPane.showMessageDialog(null, "Successfully Saved");
-			// checked exception
-		} catch (IOException ef) {
-			 System.out.println("IOE error"+ ef.toString());
-		}
-	}
+				}
 
 // file method to read 
-	public void load(String fileName) {
+	public void load(String fileName)throws ClassNotFoundException,IOException {
 		try {
 			FileInputStream fis = new FileInputStream(new File(fileName));
 			ObjectInputStream ji = new ObjectInputStream(fis);
@@ -127,7 +123,7 @@ public class Order implements Serializable {
 			ji.close();	
 		}
 		
-		// checked exception
+		 //checked exception
 		catch (EOFException e) {
 			System.out.println("End of file reached"+ e.toString());
 
@@ -194,10 +190,12 @@ while (true)
 
 }catch(EOFException ef)
 {
-System.out.println(" EOF error");
+System.out.println("");
 }
 ji.close();
 TextFile.close();
+JOptionPane.showMessageDialog(null, "Successfully Saved");
+
 }
 catch(ClassNotFoundException ef)
 {
