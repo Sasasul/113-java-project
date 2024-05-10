@@ -219,10 +219,10 @@ public class FlowerStore extends JFrame {
 		thxlabel.setFont(mainFont);
 		thxlabel.setHorizontalAlignment(SwingConstants.CENTER);
 
-		JLabel Rlabel = new JLabel();
+		/*JLabel Rlabel = new JLabel();
 		Rlabel.setText("<< we've successfully saved your receipt to a file >>");
 		Rlabel.setFont(mainFont);
-		Rlabel.setHorizontalAlignment(SwingConstants.BOTTOM);
+		Rlabel.setHorizontalAlignment(SwingConstants.BOTTOM);*/
 
 		// Labels for name and ID
 		JLabel nameLabel = new JLabel("Name: " + (name != null ? name : ""));
