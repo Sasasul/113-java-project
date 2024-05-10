@@ -184,9 +184,9 @@ public class FlowerStore extends JFrame {
 
 			case 5:
 				 // Display receipt
-				 FlowerStore OutputFrame = new FlowerStore();
+				 FlowerStore OutputFrame = new FlowerStore();// Create an instance of FlowerStore
 				 OutputFrame.initializeOutput(order, tfFirstName.getText(), tfId.getText());
-				 //order.Save("test.text");
+				 //order.Save("test.text"); هذا وش سالفته يسوي اكسبشن
 				 break;
 			default:
 				System.out.println("## invaild input ##\n");
