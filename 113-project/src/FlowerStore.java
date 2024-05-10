@@ -192,7 +192,7 @@ public class FlowerStore extends JFrame {
 				 break;
 
 			case 6:
-			order.load("test.txt") ;
+			order.load("test.text") ;
 			break;
 
 			default:
@@ -223,19 +223,17 @@ public class FlowerStore extends JFrame {
 		thxlabel.setText("❀ Thanks for shopping ❀");
 		thxlabel.setFont(mainFont);
 		thxlabel.setHorizontalAlignment(SwingConstants.CENTER);
-
-		/*JLabel Rlabel = new JLabel();
-		Rlabel.setText("<< we've successfully saved your receipt to a file >>");
-		Rlabel.setFont(mainFont);
-		Rlabel.setHorizontalAlignment(SwingConstants.BOTTOM);*/
+	
 
 		// Labels for name and ID
 		JLabel nameLabel = new JLabel("Name: " + (name != null ? name : ""));
 		JLabel idLabel = new JLabel("ID: " + (id != null ? id : ""));
-	
+		JLabel Rlabel = new JLabel("<< we've successfully saved your receipt to a file >>");
+
 		nameLabel.setFont(mainFont);
 		idLabel.setFont(mainFont);
-	
+		Rlabel.setFont(mainFont);
+
 		JTextArea receiptText = new JTextArea();
 		receiptText.setText(order.toString());
 		receiptText.setFont(mainFont);
@@ -256,9 +254,10 @@ public class FlowerStore extends JFrame {
 		mainPanel.setBackground(new Color(255, 214, 214));
 		mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		mainPanel.add(thxlabel, BorderLayout.NORTH);
-		mainPanel.add(receiptText, BorderLayout.CENTER);
+		//mainPanel.add(receiptText, BorderLayout.CENTER);
 		mainPanel.add(SULabel, BorderLayout.SOUTH);
 		mainPanel.add(nameIdPanel, BorderLayout.CENTER);
+		mainPanel.add(Rlabel,BorderLayout.CENTER);
 	
 		// Frame
 		JFrame OutputFrame = new JFrame();
