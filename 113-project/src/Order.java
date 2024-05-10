@@ -115,11 +115,11 @@ public class Order implements Serializable {
 	public void load(String fileName) {
 
 		try {
-			FileInputStream fis = new FileInputStream(fileName);
+			FileInputStream fis = new FileInputStream(new File(fileName));
 			ObjectInputStream ji = new ObjectInputStream(fis);
 
 			int size = ji.readInt();
-			String name = (String) ji.readObject();
+			//String name = (String) ji.readObject();
 			//customer.setName(name);
 
 			for (int i = 0; i < size; i++) {
@@ -127,8 +127,8 @@ public class Order implements Serializable {
 				this.addItem(obj);
 			}
 			ji.close();	
-
 		}
+		
 		// checked exception
 		catch (EOFException e) {
 			System.out.println("End of file reached"+ e.toString());

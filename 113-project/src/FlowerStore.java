@@ -107,8 +107,9 @@ public class FlowerStore extends JFrame {
 			System.out.println("2-Remove Item");
 			System.out.println("3-is There a ChoclateBox ?");
 			System.out.println("4-Calculate Total price ");
-			System.out.println("5-Disply receipt:");
-			System.out.println("6-Exite");
+			System.out.println("5-Disply receipt");
+			System.out.println("6-upload file order information:");
+			System.out.println("7-Exite");
 			System.out.println("your choice is:");
 			costumerchoise = input.nextInt();
 
@@ -188,19 +189,23 @@ public class FlowerStore extends JFrame {
 				 FlowerStore OutputFrame = new FlowerStore();// Create an instance of FlowerStore
 				 OutputFrame.initializeOutput(order, tfFirstName.getText(), tfId.getText());
 				 order.Save("test.txt");
-                 order.load("test.text") ;
 				 break;
+
+			case 6:
+			order.load("test.text") ;
+			break;
+
 			default:
-				System.out.println("## invaild input ##\n");
+				System.out.println("invaild input\n");
 
 			} // end switch
 
 			System.out.println("Do you want to select another option?");
-			System.out.println("Enter yes or 6 to exite: "); // what if it is another input  
+			System.out.println("Enter yes or 7 to exite: "); // what if it is another input  
 			chooseAnotherOption = input.next();
 
 		} // end do
-		while (costumerchoise != 6 && chooseAnotherOption.equalsIgnoreCase("yes"));
+		while (costumerchoise != 7 && chooseAnotherOption.equalsIgnoreCase("yes"));
 		input.close();
 	} // end main
 

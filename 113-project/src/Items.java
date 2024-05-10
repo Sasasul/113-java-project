@@ -2,18 +2,13 @@ import java.io.*;
 public abstract class Items implements Serializable  { 
  protected double price; 
 
- // Constructors 
- public Items() { 
- //this.price=0; 
-
- } 
  public Items(Items i) { 
  this.price = i.price; 
-
-
  } 
- // methods 
 
+ public Items(){};
+ 
+ // methods 
  public abstract double caculatePrice(); // abstract method 
  public String toString() { 
 
