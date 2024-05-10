@@ -144,6 +144,75 @@ public class Order implements Serializable {
 		}
 
 	}
+	   
+   public void need(){
+try{
+
+File f1= new File("Items.dat");
+FileOutputStream of= new FileOutputStream (f1);
+ObjectOutputStream jo= new ObjectOutputStream(of);
+
+			
+
+			
+
+jo.close();
+
+
+File f2= new File("Report.txt");
+FileOutputStream of2= new FileOutputStream (f2);
+PrintWriter TextFile = new PrintWriter (of2);
+
+
+			TextFile.println(numOfItems);
+			//fileOut.println(customer.getName());
+
+			for (int i = 0; i < numOfItems; i++)
+				TextFile.println(itemList[i]);
+
+
+
+FileInputStream fis =new FileInputStream (f1);
+ObjectInputStream ji= new ObjectInputStream(fis);
+
+try {
+while (true)
+{
+
+			int size = ji.readInt();
+			String name = (String) ji.readObject();
+			//customer.setName(name);
+
+			for (int i = 0; i < numOfItems; i++) {
+				Items obj = (Items) ji.readObject();
+				this.addItem(obj);
+            TextFile.println(itemList[i]);}}
+
+
+
+
+
+}catch(EOFException ef)
+{
+System.out.println(" EOF error");
+}
+ji.close();
+TextFile.close();
+}
+catch(ClassNotFoundException ef)
+{
+System.out.println("CNF error");
+}
+
+catch(IOException ef)
+{
+System.out.println("IOE error");
+}
+
+
+}
+
+
 
 	public String toString() {
 		String info = "Order Number: " + numOfOrder;// + "_________Customer info_________ \n\n" + customer;
