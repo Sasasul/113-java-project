@@ -200,7 +200,7 @@ public class FlowerStore extends JFrame {
 
 		} // end do
 		while (costumerchoise != 6 && chooseAnotherOption.equalsIgnoreCase("yes"));
-
+		input.close();
 	} // end main
 
 	private static void checkInputNumber(int typeOfFlower) {
