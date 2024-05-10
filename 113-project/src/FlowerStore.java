@@ -186,7 +186,7 @@ public class FlowerStore extends JFrame {
 				 // Display receipt
 				 FlowerStore OutputFrame = new FlowerStore();
 				 OutputFrame.initializeOutput(order, tfFirstName.getText(), tfId.getText());
-				 order.Save("test.text");
+				 //order.Save("test.text");
 				 break;
 			default:
 				System.out.println("## invaild input ##\n");
@@ -210,47 +210,52 @@ public class FlowerStore extends JFrame {
 		throw new choiceNumberException("you can enter that, choice 1 or 2 or 3: ");
 	}
 
-	public  void initializeOutput(Order order, String name, String id) {
-		//Labels
-		JLabel thxlabel=new JLabel();
+	public void initializeOutput(Order order, String name, String id) {
+		// Labels
+		JLabel thxlabel = new JLabel();
 		thxlabel.setText("❀ Thanks for shopping ❀");
 		thxlabel.setFont(mainFont);
 		thxlabel.setHorizontalAlignment(SwingConstants.CENTER);
-
+	
 		// Labels for name and ID
-		JLabel nameLabel = new JLabel("Name: " + name);
-		JLabel idLabel = new JLabel("ID: " + id);
-
+		JLabel nameLabel = new JLabel("Name: " + (name != null ? name : ""));
+		JLabel idLabel = new JLabel("ID: " + (id != null ? id : ""));
+	
 		nameLabel.setFont(mainFont);
 		idLabel.setFont(mainFont);
-		
+	
 		JTextArea receiptText = new JTextArea();
 		receiptText.setText(order.toString());
 		receiptText.setFont(mainFont);
-		
-		JLabel SULabel=new JLabel();
+	
+		JLabel SULabel = new JLabel();
 		SULabel.setText("See you soon <3");
 		SULabel.setFont(mainFont);
 		SULabel.setHorizontalAlignment(SwingConstants.CENTER);
-		
+	
+		// Panel for name and ID labels
+		JPanel nameIdPanel = new JPanel();
+		nameIdPanel.setLayout(new FlowLayout());
+		nameIdPanel.add(nameLabel);
+		nameIdPanel.add(idLabel);
+	
 		JPanel mainPanel = new JPanel();
 		mainPanel.setLayout(new BorderLayout());
-		mainPanel.setBackground(new Color(255,214,214));
+		mainPanel.setBackground(new Color(255, 214, 214));
 		mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		mainPanel.add(thxlabel, BorderLayout.NORTH);
 		mainPanel.add(receiptText, BorderLayout.CENTER);
 		mainPanel.add(SULabel, BorderLayout.SOUTH);
-		mainPanel.add(nameLabel, BorderLayout.CENTER);
-		mainPanel.add(idLabel, BorderLayout.CENTER);
-		
-		//Frame
-		JFrame OutputFrame=new JFrame();		
+		mainPanel.add(nameIdPanel, BorderLayout.CENTER);
+	
+		// Frame
+		JFrame OutputFrame = new JFrame();
 		OutputFrame.setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
-		OutputFrame.setSize(400,300);
-		OutputFrame.setMinimumSize(new Dimension(300,400));
-		OutputFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE); 
+		OutputFrame.setSize(400, 300);
+		OutputFrame.setMinimumSize(new Dimension(300, 400));
+		OutputFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		OutputFrame.setVisible(true);
-		OutputFrame.add(mainPanel);//add mainPanel to JFrame
+		OutputFrame.add(mainPanel); // add mainPanel to JFrame
 		OutputFrame.pack();
-	}		
+	}	
 } // end class

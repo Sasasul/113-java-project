@@ -147,7 +147,7 @@ public class Order implements Serializable {
 	}
 
 	public String toString() {
-		String info = "Order Number: " + numOfOrder + "\n\n";// + "_________Customer info_________ \n\n" + customer;
+		String info = "Order Number: " + numOfOrder;// + "_________Customer info_________ \n\n" + customer;
 		for (int i = 0; i < numOfItems; i++) {
 			info += itemList[i].toString();
 		}
