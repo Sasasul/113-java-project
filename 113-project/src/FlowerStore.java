@@ -84,7 +84,7 @@ public class FlowerStore extends JFrame  {
    
       add(mainPanel);  //add mainPanel to JFrame
    
-      ImageIcon imageIcon = new ImageIcon("113-java-project\\113-project\\src\\vecteezy_hand-drawn-colored-star-banner_22183251.png");
+      ImageIcon imageIcon = new ImageIcon("/113-project/FlowerImage.png");
       setIconImage(imageIcon.getImage());
    
       setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
@@ -272,6 +272,8 @@ public class FlowerStore extends JFrame  {
    
    	// Frame
       JFrame OutputFrame = new JFrame();
+      ImageIcon imageIcon = new ImageIcon("/113-project/FlowerImage.png");
+      OutputFrame.setIconImage(imageIcon.getImage());
       OutputFrame.setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
       OutputFrame.setSize(200, 200);
       OutputFrame.setMinimumSize(new Dimension(200, 200));
