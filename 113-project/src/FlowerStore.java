@@ -199,10 +199,12 @@ public class FlowerStore extends JFrame  {
                break;
          
             case 6:
-               
                   order.readFile();   // method to read and display items in text file         
-              
                break;
+
+			case 7:
+			System.out.println("see you soon, bey");
+			System.exit(0);  
          
             default:
                System.out.println("invaild input\n");
