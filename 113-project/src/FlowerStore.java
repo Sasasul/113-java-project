@@ -191,7 +191,7 @@ public class FlowerStore extends JFrame  {
                FlowerStore OutputFrame = new FlowerStore();// Create an instance of FlowerStore
                OutputFrame.initializeOutput(order, tfFirstName.getText(), tfId.getText());
                try {
-				order.writeFile();
+				order.writeFile(); // mothod to write the items and save it in orderinfo.ser
 			} catch (IOException e) {
 				e.printStackTrace();
 			} 
