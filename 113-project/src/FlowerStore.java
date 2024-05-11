@@ -94,7 +94,7 @@ public class FlowerStore extends JFrame  {
       setVisible(true);
    }
 
-   public static void main(String[] args) throws choiceNumberException,IOException {
+   public static void main(String[] args) throws choiceNumberException {
    
       FlowerStore InputFrame = new FlowerStore();
       InputFrame.initializeinput();
@@ -191,12 +191,12 @@ public class FlowerStore extends JFrame  {
              // Display receipt
                FlowerStore OutputFrame = new FlowerStore();// Create an instance of FlowerStore
                OutputFrame.initializeOutput(order, tfFirstName.getText(), tfId.getText());
-               //order.Save("test.txt");
+               order.Save(); // method to save items
                break;
          
             case 6:
                
-                  order.need();            
+                  order.load();   // method to read and display items in text file         
               
                break;
          
