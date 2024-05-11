@@ -191,12 +191,16 @@ public class FlowerStore extends JFrame  {
              // Display receipt
                FlowerStore OutputFrame = new FlowerStore();// Create an instance of FlowerStore
                OutputFrame.initializeOutput(order, tfFirstName.getText(), tfId.getText());
-               order.Save(); // method to save items
+               try {
+				order.writeFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} 
                break;
          
             case 6:
                
-                  order.load();   // method to read and display items in text file         
+                  order.readFile();   // method to read and display items in text file         
               
                break;
          
@@ -229,27 +233,23 @@ public class FlowerStore extends JFrame  {
       thxlabel.setFont(mainFont);
       thxlabel.setHorizontalAlignment(SwingConstants.CENTER);
    
-   
-   	// Labels for name and ID
       JLabel nameLabel = new JLabel("Name: " + (name != null ? name : ""));
-      JLabel idLabel = new JLabel("ID: " + (id != null ? id : ""));
-      JLabel Rlabel = new JLabel("✓ we've successfully saved your receipt to a file ");
-   
       nameLabel.setFont(mainFont);
+      
+      JLabel idLabel = new JLabel(", ID: " + (id != null ? id : ""));
       idLabel.setFont(mainFont);
-      Rlabel.setFont(mainFont);
-	
-   
-      JTextArea receiptText = new JTextArea();
-      receiptText.setText(order.toString());
-      receiptText.setFont(mainFont);
    
       JLabel SULabel = new JLabel();
       SULabel.setText("See you soon <3");
       SULabel.setFont(mainFont);
       SULabel.setHorizontalAlignment(SwingConstants.CENTER);
-   
-   	// Panel for name and ID labels
+      
+      JLabel Rlabel = new JLabel();
+      Rlabel.setText("✓ we've successfully saved your receipt to a file ");
+      Rlabel.setFont(mainFont);
+      Rlabel.setHorizontalAlignment(SwingConstants.CENTER);
+      
+   	// Panels 
       JPanel nameIdPanel = new JPanel();
       nameIdPanel.setLayout(new FlowLayout());
       nameIdPanel.add(nameLabel);
@@ -261,11 +261,14 @@ public class FlowerStore extends JFrame  {
       mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
       mainPanel.add(thxlabel, BorderLayout.NORTH);
       mainPanel.add(nameIdPanel, BorderLayout.CENTER);
-      mainPanel.add(Rlabel, BorderLayout.PAGE_END);
-      mainPanel.add(SULabel, BorderLayout.SOUTH); // معد يبان
    	
-   
-   
+      JPanel EndOfPagePanel = new JPanel();
+      EndOfPagePanel.setLayout(new BorderLayout());
+      EndOfPagePanel.setBackground(new Color(255, 214, 214));
+      EndOfPagePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+      EndOfPagePanel.add(Rlabel, BorderLayout.NORTH);
+      EndOfPagePanel.add(SULabel, BorderLayout.SOUTH);
+      //EndOfPagePanel.getBaseline(10, 10);
    
    	// Frame
       JFrame OutputFrame = new JFrame();
@@ -274,7 +277,8 @@ public class FlowerStore extends JFrame  {
       OutputFrame.setMinimumSize(new Dimension(200, 200));
       OutputFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
       OutputFrame.setVisible(true);
-      OutputFrame.add(mainPanel); // add mainPanel to JFrame
+      OutputFrame.add(mainPanel, BorderLayout.NORTH);// add mainPanel to JFrame
+      OutputFrame.add(EndOfPagePanel, BorderLayout.CENTER);//add EndOfPagePanel to JFrame
       OutputFrame.pack();
    }	
 } // end class
