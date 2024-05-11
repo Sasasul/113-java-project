@@ -84,7 +84,7 @@ public class FlowerStore extends JFrame  {
    
       add(mainPanel);  //add mainPanel to JFrame
    
-      ImageIcon imageIcon = new ImageIcon("/113-project/FlowerImage.png");
+      ImageIcon imageIcon = new ImageIcon("FlowerImage.png");
       setIconImage(imageIcon.getImage());
    
       setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
@@ -272,7 +272,7 @@ public class FlowerStore extends JFrame  {
    
    	// Frame
       JFrame OutputFrame = new JFrame();
-      ImageIcon imageIcon = new ImageIcon("/113-project/FlowerImage.png");
+      ImageIcon imageIcon = new ImageIcon("FlowerImage.png");
       OutputFrame.setIconImage(imageIcon.getImage());
       OutputFrame.setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
       OutputFrame.setSize(200, 200);
