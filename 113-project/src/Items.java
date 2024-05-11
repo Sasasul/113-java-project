@@ -7,12 +7,12 @@ public abstract class Items implements Serializable  {
  } 
 
  public Items(){};
- 
+
  // methods 
  public abstract double caculatePrice(); // abstract method 
  public String toString() { 
 
- return "price is: " + price; 
+ return "price is: " + price+ " SR"; 
 
  } 
 // setters and getters 

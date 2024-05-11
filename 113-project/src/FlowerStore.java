@@ -184,7 +184,7 @@ public class FlowerStore extends JFrame  {
             // calculate Total price
                double total = 0;
                total = order.calculateTotalprice();
-               System.out.println("The total price is: " + total + "");
+               System.out.println("The total price is: " + total + " SR");
                break;
          
             case 5:
