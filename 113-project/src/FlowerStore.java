@@ -111,7 +111,7 @@ public class FlowerStore extends JFrame  {
          System.out.println("3-is There a ChoclateBox?");
          System.out.println("4-Calculate Total price ");
          System.out.println("5-Disply receipt");
-         System.out.println("6-upload file order information:");
+         System.out.println("6-to make a readble copy of your receipt");
          System.out.println("7-Exite");
          System.out.println("your choice is:");
          costumerchoise = input.nextInt();
@@ -249,7 +249,7 @@ public class FlowerStore extends JFrame  {
       SULabel.setHorizontalAlignment(SwingConstants.CENTER);
       
       JLabel Rlabel = new JLabel();
-      Rlabel.setText("✓ we've successfully saved your receipt to a file ");
+      Rlabel.setText("✓ we've successfully saved your receipt to a file, you can chose option 6 to be able to reaad it ");
       Rlabel.setFont(mainFont);
       Rlabel.setHorizontalAlignment(SwingConstants.CENTER);
       
@@ -279,8 +279,8 @@ public class FlowerStore extends JFrame  {
       ImageIcon imageIcon = new ImageIcon("FlowerImage.png");
       OutputFrame.setIconImage(imageIcon.getImage());
       OutputFrame.setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
-      OutputFrame.setSize(200, 200);
-      OutputFrame.setMinimumSize(new Dimension(200, 200));
+      OutputFrame.setSize(400, 200);
+      OutputFrame.setMinimumSize(new Dimension(400, 200));
       OutputFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
       OutputFrame.setVisible(true);
       OutputFrame.add(mainPanel, BorderLayout.NORTH);// add mainPanel to JFrame

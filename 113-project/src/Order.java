@@ -110,7 +110,7 @@ public class Order implements Serializable {
 			FileInputStream fis = new FileInputStream(new File("orderInf.ser"));
          ObjectInputStream ji = new ObjectInputStream(fis);
          
-         File txt= new File("test.txt");
+         File txt= new File("readble_receipt.txt");
          FileOutputStream fos = new  FileOutputStream(txt);
          PrintWriter pr= new PrintWriter(fos);
          try {
@@ -143,7 +143,7 @@ public class Order implements Serializable {
 
 
 	public String toString() {
-		String info = "Order Number: " + numOfOrder;// + "_________Customer info_________ \n\n" + customer;
+		String info = "Order Number: " + numOfOrder;
 		for (int i = 0; i < numOfItems; i++) {
 			info += itemList[i].toString();
 		}
