@@ -25,7 +25,6 @@ public class FlowerStore extends JFrame  {
       tfId=new JTextField();
       tfId.setFont(mainFont);	
    
-   
       JPanel formPenel = new JPanel();
       formPenel.setLayout(new GridLayout(4,1,5,5));
       formPenel.setOpaque(false);
@@ -52,7 +51,7 @@ public class FlowerStore extends JFrame  {
          });
    
       
-      order = new Order();
+      order = new Order();// make new order after adding new customer info
    
       JButton btnClear = new JButton("Clear");
       btnClear.setFont(mainFont);
@@ -73,7 +72,6 @@ public class FlowerStore extends JFrame  {
       buttonsPanel.add(btnClear);
       buttonsPanel.add(btnNext);
    	
-   
       JPanel mainPanel = new JPanel();
       mainPanel.setLayout(new BorderLayout());
       mainPanel.setBackground(new Color(255,214,214));
@@ -83,8 +81,9 @@ public class FlowerStore extends JFrame  {
       mainPanel.add(buttonsPanel, BorderLayout.SOUTH);
    
       add(mainPanel);  //add mainPanel to JFrame
-   
-      ImageIcon imageIcon = new ImageIcon("FlowerImage.png");
+
+	// set icon	 
+      ImageIcon imageIcon = new ImageIcon("113-java-project\\113-project\\src\\FlowerImage.png");
       setIconImage(imageIcon.getImage());
    
       setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
@@ -222,13 +221,13 @@ public class FlowerStore extends JFrame  {
       input.close();
    } // end main
 
+
    private static void checkInputNumber(int typeOfFlower) {
-   
       if ( typeOfFlower == 1 || typeOfFlower == 2 || typeOfFlower == 3 )
          return;
-   
       throw new choiceNumberException("you can enter that, choice 1 or 2 or 3: ");
    }
+
 
    public void initializeOutput(Order order, String name, String id) {
    	// Labels
@@ -248,10 +247,10 @@ public class FlowerStore extends JFrame  {
       SULabel.setFont(mainFont);
       SULabel.setHorizontalAlignment(SwingConstants.CENTER);
       
-      JLabel Rlabel = new JLabel();
-      Rlabel.setText("✓ we've successfully saved your receipt to a file, you can chose option 6 to be able to reaad it ");
-      Rlabel.setFont(mainFont);
-      Rlabel.setHorizontalAlignment(SwingConstants.CENTER);
+      JLabel Conformlabel = new JLabel();
+      Conformlabel.setText("✓ we've successfully saved your receipt to a file, you can chose option 6 to be able to reaad it ");
+      Conformlabel.setFont(mainFont);
+      Conformlabel.setHorizontalAlignment(SwingConstants.CENTER);
       
    	// Panels 
       JPanel nameIdPanel = new JPanel();
@@ -270,13 +269,12 @@ public class FlowerStore extends JFrame  {
       EndOfPagePanel.setLayout(new BorderLayout());
       EndOfPagePanel.setBackground(new Color(255, 214, 214));
       EndOfPagePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-      EndOfPagePanel.add(Rlabel, BorderLayout.NORTH);
+      EndOfPagePanel.add(Conformlabel, BorderLayout.NORTH);
       EndOfPagePanel.add(SULabel, BorderLayout.SOUTH);
-      //EndOfPagePanel.getBaseline(10, 10);
-   
+
    	// Frame
       JFrame OutputFrame = new JFrame();
-      ImageIcon imageIcon = new ImageIcon("FlowerImage.png");
+      ImageIcon imageIcon = new ImageIcon("113-java-project\\113-project\\src\\FlowerImage.png");
       OutputFrame.setIconImage(imageIcon.getImage());
       OutputFrame.setTitle(" ‧₊˚❀༉‧₊˚.FLOWER STORE‧₊˚❀༉‧₊˚.");
       OutputFrame.setSize(400, 200);
