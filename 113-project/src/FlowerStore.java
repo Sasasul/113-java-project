@@ -217,6 +217,8 @@ public class FlowerStore extends JFrame  {
       
       } // end do
       while (costumerchoise != 7 && chooseAnotherOption.equalsIgnoreCase("yes"));
+	  System.out.println("see you soon, bey");
+	  System.exit(0);  
       input.close();
    } // end main
 
