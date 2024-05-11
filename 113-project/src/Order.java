@@ -91,124 +91,55 @@ public class Order implements Serializable {
 	}
 
 	// File method to Write
-	public void Save(String fileName)throws IOException  {
+	public void Save()throws IOException  {
 		
-			FileOutputStream fOut = new FileOutputStream(new File(fileName));
-			PrintWriter fileOut = new PrintWriter(fOut);
+			FileOutputStream fOut = new FileOutputStream(new File("orderInf.ser"));
+         ObjectOutputStream oos = new  ObjectOutputStream (fOut);
+         
+					
+				oos.writeObject(itemList);
 
-			fileOut.println(numOfItems);
-			
-
-			for (int i = 0; i < numOfItems; i++)
-				fileOut.println(itemList[i]);
-
-			fileOut.close();
+			oos.close();
 			JOptionPane.showMessageDialog(null, "Successfully Saved");
 				}
 
+
 // file method to read 
-	public void load(String fileName)throws ClassNotFoundException,IOException {
+	public void load() {
 		try {
-			FileInputStream fis = new FileInputStream(new File(fileName));
-			ObjectInputStream ji = new ObjectInputStream(fis);
-			System.out.println("**");
-			int size = ji.readInt();
-			System.out.println("*");
-
-			for (int i = 0; i < size; i++) {
-				Items obj = (Items) ji.readObject();
-				this.addItem(obj);
-			}
-			ji.close();	
-		}
+			FileInputStream fis = new FileInputStream(new File("orderInf.ser"));
+         ObjectInputStream ji = new ObjectInputStream(fis);
+         
+         File txt= new File("test.txt");
+         FileOutputStream fos = new  FileOutputStream(txt);
+         PrintWriter pr= new PrintWriter(fos);
+         try {
+        Items itemList[]  = (Items []) ji.readObject();
+			pr.println(numOfItems);
 		
-		 //checked exception
-		catch (EOFException e) {
-			System.out.println("End of file reached"+ e.toString());
 
-		}
-
+			for (int i = 0; i < itemList.length ; i++)
+         if(itemList[i]!= null)
+         pr.println(itemList[i]);
+         }
+        
+		
 		// uncheack exception
 		catch (ClassNotFoundException ef) {
 			System.out.println("CNF error"+ ef.toString());
 
 		}
+      ji.close();
+      pr.close();
 		// checked exception
-		catch (IOException ef) {
+		}catch (IOException ef) {
 			System.out.println("IOE error"+ ef.toString());
 		}
 
 	}
+
 	   
-   public void need(){
-try{
-
-File f1= new File("Items.dat");
-FileOutputStream of= new FileOutputStream (f1);
-ObjectOutputStream jo= new ObjectOutputStream(of);
-
-			
-
-			
-
-jo.close();
-
-
-File f2= new File("Report.txt");
-FileOutputStream of2= new FileOutputStream (f2);
-PrintWriter TextFile = new PrintWriter (of2);
-
-
-			TextFile.println(numOfItems);
-			//fileOut.println(customer.getName());
-
-			for (int i = 0; i < numOfItems; i++)
-				TextFile.println(itemList[i]);
-
-
-
-FileInputStream fis =new FileInputStream (f1);
-ObjectInputStream ji= new ObjectInputStream(fis);
-
-try {
-while (true)
-{
-
-			int size = ji.readInt();
-			String name = (String) ji.readObject();
-			//customer.setName(name);
-
-			for (int i = 0; i < numOfItems; i++) {
-				Items obj = (Items) ji.readObject();
-				this.addItem(obj);
-            TextFile.println(itemList[i]);}}
-
-
-
-
-
-}catch(EOFException ef)
-{
-System.out.println("");
-}
-ji.close();
-TextFile.close();
-JOptionPane.showMessageDialog(null, "Successfully Saved");
-
-}
-catch(ClassNotFoundException ef)
-{
-System.out.println("CNF error");
-}
-
-catch(IOException ef)
-{
-System.out.println("IOE error");
-}
-
-
-}
-
+ 
 
 
 	public String toString() {
