@@ -91,7 +91,7 @@ public class Order implements Serializable {
 	}
 
 	// File method to Write
-	public void Save()throws IOException  {
+	public void writeFile()throws IOException  {
 		
 			FileOutputStream fOut = new FileOutputStream(new File("orderInf.ser"));
          ObjectOutputStream oos = new  ObjectOutputStream (fOut);
@@ -105,7 +105,7 @@ public class Order implements Serializable {
 
 
 // file method to read 
-	public void load() {
+	public void readFile() {
 		try {
 			FileInputStream fis = new FileInputStream(new File("orderInf.ser"));
          ObjectInputStream ji = new ObjectInputStream(fis);
